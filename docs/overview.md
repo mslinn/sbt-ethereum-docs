@@ -49,6 +49,7 @@ ethSelfPing                    ethSendEther                   ethSender         
 ethSolidityDestination         ethSolidityInstallCompiler     ethSolidityShowCompiler        ethSoliditySource              ethTargetDir                   ethTestrpcLocalRestart         ethTestrpcLocalStart           ethTestrpcLocalStop            
 > eth
 ```
+
 Similarly, typing `xeth<tab>` shows all the SBT commands that `sbt-ethereum` defines with that prefix:
 ```
 > xeth
@@ -62,3 +63,5 @@ xethTriggerDirtySolidityCompilerList       xethUpdateContractDatabase           
 xethWalletV3Pbkdf2DkLen                    xethWalletV3ScryptDkLen                    xethWalletV3ScryptN                        xethWalletV3ScryptP                        xethWalletV3ScryptR                        
 > xeth
 ```
+
+All of the commands are [described individually](commands.md).
