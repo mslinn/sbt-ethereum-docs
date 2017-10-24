@@ -2,10 +2,10 @@
 
 There are three types of activities you can perform with `sbt-ethereum`:
 
-  1. Running ad-hoc, interactive commands, performed in the SBT REPL.
-     These commands are provided by `sbt-ethereum`.
-  2. Defining and running SBT tasks that wrap the above `sbt-ethereum` SBT commands into custom SBT commands for your needs.
-  3. Compiling and running a program that executes Solidity commands using functionality provided by `sbt-ethereum`.
+  1. Running ad-hoc, interactive SBT tasks, performed in the SBT REPL.
+     These tasks are provided by `sbt-ethereum`.
+  2. Defining and running SBT tasks that wrap the above `sbt-ethereum` SBT tasks into custom SBT tasks for your needs.
+  3. Compiling and running a program that executes Solidity programs using functionality provided by `sbt-ethereum`.
 
 ## Getting Started
   1. Obtain a token from [infura.io](https://infura.io) and store it in an environment variable called `INFURA_TOKEN`.
@@ -35,9 +35,9 @@ $ sbt
 > 
 ```
 
-All of the `sbt-ethereum` commands are prefaced with `eth` or `xeth`.
+All of the `sbt-ethereum` SBT tasks are prefaced with `eth` or `xeth`.
 Tab completion is supported.
-Try typing `eth<tab>`, and you will see all the SBT commands that `sbt-ethereum` defines with that prefix:
+Try typing `eth<tab>`, and you will see all the SBT tasks that `sbt-ethereum` defines with that prefix:
 
 ```
 > eth
@@ -49,7 +49,8 @@ ethSelfPing                    ethSendEther                   ethSender         
 ethSolidityDestination         ethSolidityInstallCompiler     ethSolidityShowCompiler        ethSoliditySource              ethTargetDir                   ethTestrpcLocalRestart         ethTestrpcLocalStart           ethTestrpcLocalStop            
 > eth
 ```
-Similarly, typing `xeth<tab>` shows all the SBT commands that `sbt-ethereum` defines with that prefix:
+
+Similarly, typing `xeth<tab>` shows all the SBT tasks that `sbt-ethereum` defines with that prefix:
 ```
 > xeth
 xethDefaultGasPrice                        xethEphemeralBlockchains                   xethFindCacheAliasesIfAvailable            xethFindCacheOmitDupsCurrentCompilations   xethFindCacheSessionSolidityCompilerKeys   
@@ -62,3 +63,5 @@ xethTriggerDirtySolidityCompilerList       xethUpdateContractDatabase           
 xethWalletV3Pbkdf2DkLen                    xethWalletV3ScryptDkLen                    xethWalletV3ScryptN                        xethWalletV3ScryptP                        xethWalletV3ScryptR                        
 > xeth
 ```
+
+All of the SBT tasks are [described individually](tasks.md).

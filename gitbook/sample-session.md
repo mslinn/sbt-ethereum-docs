@@ -12,63 +12,6 @@ ethKeystoreList
 | 0x766f158c69cdb28e2f8815e16a82ecee48865d38 |
 +--------------------------------------------+
 [success] Total time: 0 s, completed Oct 23, 2017 3:55:28 PM
-> ethBalance
-ethBalance
-[trace] Stack trace suppressed: run last compile:ethBalance for the full output.
-[error] (compile:ethBalance) com.mchange.sc.v2.failable.package$UnhandledFailException: Fail: com.mchange.sc.v1.sbtethereum.package$SenderNotAvailableException: Cannot find an 'ethSender' or default sender (blockchain 'mainnet, configuration 'compile')'
-[error] com.mchange.sc.v1.sbtethereum.SbtEthereumPlugin$autoImport$$anonfun$xethFindCurrentSenderTask$1$$anonfun$apply$104$$anonfun$apply$105.apply(SbtEthereumPlugin.scala:1375)
-[error] com.mchange.sc.v1.sbtethereum.SbtEthereumPlugin$autoImport$$anonfun$xethFindCurrentSenderTask$1$$anonfun$apply$104$$anonfun$apply$105.apply(SbtEthereumPlugin.scala:1370)
-[error] scala.Option.getOrElse(Option.scala:120)
-[error] com.mchange.sc.v1.sbtethereum.SbtEthereumPlugin$autoImport$$anonfun$xethFindCurrentSenderTask$1$$anonfun$apply$104.apply(SbtEthereumPlugin.scala:1370)
-[error] com.mchange.sc.v1.sbtethereum.SbtEthereumPlugin$autoImport$$anonfun$xethFindCurrentSenderTask$1$$anonfun$apply$104.apply(SbtEthereumPlugin.scala:1349)
-[error] scala.util.Try$.apply(Try.scala:161)
-[error] com.mchange.sc.v2.failable.package$Failable$.apply(package.scala:94)
-[error] com.mchange.sc.v1.sbtethereum.SbtEthereumPlugin$autoImport$$anonfun$xethFindCurrentSenderTask$1.apply(SbtEthereumPlugin.scala:1349)
-[error] com.mchange.sc.v1.sbtethereum.SbtEthereumPlugin$autoImport$$anonfun$xethFindCurrentSenderTask$1.apply(SbtEthereumPlugin.scala:1348)
-[error] scala.Function1$$anonfun$compose$1.apply(Function1.scala:47)
-[error] sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:40)
-[error] sbt.std.Transform$$anon$4.work(System.scala:63)
-[error] sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:228)
-[error] sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:228)
-[error] sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:17)
-[error] sbt.Execute.work(Execute.scala:237)
-[error] sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
-[error] sbt.Execute$$anonfun$submit$1.apply(Execute.scala:228)
-[error] sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:159)
-[error] sbt.CompletionService$$anon$2.call(CompletionService.scala:28)
-[error] java.util.concurrent.FutureTask.run(FutureTask.java:266)
-[error] java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-[error] java.util.concurrent.FutureTask.run(FutureTask.java:266)
-[error] java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-[error] java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-[error] java.lang.Thread.run(Thread.java:748)
-[error] Total time: 0 s, completed Oct 23, 2017 3:55:44 PM
-> ethAliasSet defaultSender xxxxx
-ethAliasSet defaultSender xxxxx
-[info] Alias 'defaultSender' now points to address 'xxxx' (for blockchain 'mainnet').
-[info] Refreshing alias cache.
-[success] Total time: 0 s, completed Oct 23, 2017 3:56:47 PM
-> ethBalance
-ethBalance
-[trace] Stack trace suppressed: run last compile:ethBalance for the full output.
-[error] (compile:ethBalance) java.lang.NullPointerException
-[error] Total time: 0 s, completed Oct 23, 2017 3:56:58 PM
-> last compile:ethBalance
-last compile:ethBalance
-java.lang.NullPointerException
-	at org.eclipse.jetty.io.ssl.SslClientConnectionFactory.newConnection(SslClientConnectionFactory.java:70)
-	at org.eclipse.jetty.client.AbstractHttpClientTransport$ClientSelectorManager.newConnection(AbstractHttpClientTransport.java:191)
-	at org.eclipse.jetty.io.ManagedSelector.createEndPoint(ManagedSelector.java:424)
-	at org.eclipse.jetty.io.ManagedSelector.access$1600(ManagedSelector.java:61)
-	at org.eclipse.jetty.io.ManagedSelector$CreateEndPoint.run(ManagedSelector.java:603)
-	at org.eclipse.jetty.util.thread.Invocable.invokePreferred(Invocable.java:128)
-	at org.eclipse.jetty.util.thread.Invocable$InvocableExecutor.invoke(Invocable.java:222)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:294)
-	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:199)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:673)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:591)
-	at java.lang.Thread.run(Thread.java:748)
-[error] (compile:ethBalance) java.lang.NullPointerException
 > xethGasPriceOverrideSet 5 gwei
 [info] Gas price override set to 5000000000.
 [success] Total time: 0 s, completed Oct 23, 2017 4:22:20 PM
