@@ -5,6 +5,7 @@
 // sbt tut && git commit -am - && git push
 
 name := "sbt-ethereum-docs"
+scalaVersion := "2.12.4"
 
 enablePlugins(TutPlugin)
 tutTargetDirectory := new File("gitbook")
