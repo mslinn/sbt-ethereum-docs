@@ -1,4 +1,4 @@
-# sbt-ethereum Documentation
+# Summary
 
 * [Overview](gitbook/overview.md)
 * [Commands](gitbook/commands.md)
