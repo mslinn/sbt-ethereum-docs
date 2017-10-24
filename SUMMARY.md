@@ -52,7 +52,7 @@
     * [ethTestrpcLocalStart](gitbook/tasks.md#ethtestrpclocalstart)
     * [ethTestrpcLocalStop](gitbook/tasks.md#ethtestrpclocalstop)
     
-  * `xeth` SBT Tasks
+  * [xeth SBT Tasks](gitbook/tasks.md#xeth-sbt-tasks)
     * [xethDefaultGasPrice](gitbook/tasks.md#xethdefaultgasprice)
     * [xethEphemeralBlockchains](gitbook/tasks.md#xethephemeralblockchains)
     * [xethFindCacheAliasesIfAvailable](gitbook/tasks.md#xethfindcachealiasesifavailable)
