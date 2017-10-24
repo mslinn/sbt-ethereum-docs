@@ -35,9 +35,9 @@ $ sbt
 > 
 ```
 
-All of the `sbt-ethereum` SBT tasks are prefaced with `eth` or `xeth`.
+All of the `sbt-ethereum` SBT tasks and settings are prefaced with `eth` or `xeth`.
 Tab completion is supported.
-Try typing `eth<tab>`, and you will see all the SBT tasks that `sbt-ethereum` defines with that prefix:
+Try typing `eth<tab>`, and you will see all the SBT tasks and settings that `sbt-ethereum` defines with that prefix:
 
 ```
 > eth
@@ -50,7 +50,7 @@ ethSolidityDestination         ethSolidityInstallCompiler     ethSolidityShowCom
 > eth
 ```
 
-Similarly, typing `xeth<tab>` shows all the SBT tasks that `sbt-ethereum` defines with that prefix:
+Similarly, typing `xeth<tab>` shows all the SBT tasks and settings that `sbt-ethereum` defines with that prefix:
 ```
 > xeth
 xethDefaultGasPrice                        xethEphemeralBlockchains                   xethFindCacheAliasesIfAvailable            xethFindCacheOmitDupsCurrentCompilations   xethFindCacheSessionSolidityCompilerKeys   
