@@ -1,46 +1,53 @@
-# `sbt-ethereum` SBT Tasks
-The following SBT tasks are provided by `sbt-ethereum`.
+# `sbt-ethereum` SBT Tasks and Settings
+The following SBT tasks and settings are provided by `sbt-ethereum`.
 Some require configuration, others do not.
 
-## `eth` Tasks
+## `eth` Tasks and Settings
 
 ### `ethAbiForget`
+This task removes an ABI definition that was added to the sbt-ethereum database via ethAbiMemorize.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethAbiList`
+This task lists the addresses for which ABI definitions have been memorized. (Does not include our own deployed compilations, see 'ethCompilationsList').
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethAbiMemorize`
+This task prompts for an ABI definition for a contract and inserts it into the sbt-ethereum database.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethAliasDrop`
+This task drops an alias for an ethereum address from the sbt-ethereum repository database.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethAliasList`
+This task lists aliases for ethereum addresses that can be used in place of the hex address in many tasks.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethAliasSet`
+This task defines or redefines an alias for an ethereum address that can be used in place of the hex address in many tasks.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethBalance`
+This task computes the balance in ether of a given address, or of current sender if no address is supplied.
 Sample usage, showing a balance of approximately $3 at the time of writing:
 ```sbtshell
 > ethBalance
@@ -48,26 +55,29 @@ Sample usage, showing a balance of approximately $3 at the time of writing:
 [success] Total time: 0 s, completed Oct 23, 2017 4:26:26 PM
 ```
 
-### `ethBalanceInWei` 
+### `ethBalanceInWei`
+This task computes the balance in wei of a given address, or of current sender if no address is supplied.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethBlockchainId` 
+### `ethBlockchainId`
+This setting defines the name for the network represented by `ethJsonRpcUrl` (e.g. `mainnet`, `morden`, `ropsten`).
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethCompilationsCull` 
+### `ethCompilationsCull`
+This task removes never-deployed compilations from the repository database.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethCompilationsInspect`
-Dump out everything known about a contract at a specific address.
+This task dumps to the console full information about a compilation, based on either a code hash or contract address.
 This query costs a tiny bit of gas.
 
 [etherscan.io](https://etherscan.io) can show the same information; the information provided in the following 
@@ -161,7 +171,8 @@ Metadata:
 [success] Total time: 0 s, completed Oct 23, 2017 4:25:21 PM
 ```
 
-### `ethCompilationsList` 
+### `ethCompilationsList`
+This task lists summary information about compilations known in the repository.
 Sample usage:
 ```sbtshell
 > ethCompilationsList
@@ -174,19 +185,21 @@ Sample usage:
 ```
 
 ### `ethDeployAuto`
+This task deploys contracts named in `ethDeployAutoContracts`.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethDeployAutoContracts` 
+### `ethDeployAutoContracts`
+This setting defines names (and optional space-separated constructor args) of contracts compiled within this project that should be deployed automatically.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethDeployOnly`
-FIXME What does this do?
+This task deploys the specified named contract.
 Sample usage:
 ```sbtshell
 > ethDeployOnly SampleContract
@@ -213,31 +226,36 @@ Enter passphrase or hex private key for address '0x766f158c69cdb28e2f8815e16a82e
 ```
 
 ### `ethEntropySource`
+This setting defines the source of randomness that will be used for key generation.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethGasMarkup`
+This setting defines the fraction by which automatically estimated gas limits will be marked up (if not overridden) in setting contract creation transaction gas limits.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethGasPriceMarkup` 
+This setting defines the fraction by which automatically estimated gas price will be marked up (if not overridden) in executing transactions.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethIncludeLocations` 
+### `ethIncludeLocations`
+This setting defines the directories or URLs that should be searched to resolve import directives, besides the source directory itself.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethInvokeConstant`
-This SBT task invokes a method on a local copy of the blockchain.
+This task makes a call to a constant function, consulting only the local copy of the blockchain. 
+It burns no Ether and returns the latest available result.
 It does not cost gas and runs more quikcly than running it via `ethInvokeTransaction`.
 Sample usage:
 ```sbtshell
@@ -251,7 +269,7 @@ Sample usage:
 ```
 
 ### `ethInvokeTransaction`
-This SBT task invokes a method on the master (non-local) copy of the blockchain.
+This SBT task calls a function on a deployed smart contract.
 It costs gas and runs more slowly than running it via `ethInvokeConstant`.
 Sample usage:
 ```sbtshell
@@ -269,6 +287,7 @@ Enter passphrase or hex private key for address '0x766f158c69cdb28e2f8815e16a82e
 ```
 
 ### `ethJsonRpcUrl`
+This setting defines the URL that the Ethereum JSON-RPC service build should work with.
 The following sample usage assumes your [Infura](https://infura.io) token is `xxxx`:
 ```sbtshell
 > show ethJsonRpcUrl
@@ -277,24 +296,28 @@ show ethJsonRpcUrl
 ```
 
 ### `ethKeystoreAutoRelockSeconds` 
+This setting defines the number of seconds after which an unlocked private key should automatically relock.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethKeystoreCreateWalletV3` 
+### `ethKeystoreCreateWalletV3`
+This task generates a new V3 wallet, using `ethEntropySource` as a source of randomness.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethKeystoreInspectWalletV3` 
+### `ethKeystoreInspectWalletV3`
+This task prints V3 wallet as JSON to the console.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethKeystoreList` 
+### `ethKeystoreList`
+This task lists all addresses in known and available keystores, with any aliases that may have been defined.
 The following sample usage shows a keystore has already been set up with the public address `0x766f158c69cdb28e2f8815e16a82ecee48865d38`:
 ```sbtshell
 > ethKeystoreList
@@ -307,115 +330,134 @@ ethKeystoreList
 [success] Total time: 0 s, completed Oct 23, 2017 3:55:28 PM
 ```
 
-### `ethKeystoreLocationsV3` 
+### `ethKeystoreLocationsV3`
+This setting defines the directories from which V3 wallets can be loaded.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethKeystoreMemorizeWalletV3` 
+### `ethKeystoreMemorizeWalletV3`
+This task prompts for the JSON of a V3 wallet and inserts it into the sbt-ethereum keystore.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethKeystoreRevealPrivateKey` 
+### `ethKeystoreRevealPrivateKey`
+Danger! Warning! This task unlocks a wallet with a passphrase and prints the plaintext private key directly to the console (standard out).
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethKeystoreValidateWalletV3` 
+### `ethKeystoreValidateWalletV3`
+This task verifies that a V3 wallet can be decoded for an address, and decodes to the expected address.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethNetcompileUrl`
+This optional setting defines the URL of an eth-netcompile service, for more reliable network-based compilation than that available over json-rpc.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethPackageScalaStubs`
+This setting defines the package into which Scala stubs of Solidity compilations should be generated.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethSelfPing`
+This task sends 0 ether from current sender to itself.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethSendEther`
+This task sends ether from the current sender to a specified account in the format `ethSendEther <to-address-as-hex> <amount> <wei|szabo|finney|ether>`.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethSender`
+This setting defines the address from which transactions will be sent.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethSenderOverrideDrop` 
+### `ethSenderOverrideDrop`
+This task removes any sender override, reverting to any `ethSender` or `defaultSender` that may be set.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethSenderOverrideSet`
+This task sets an ethereum address to be used as sender in prefernce to any 'ethSender' or defaultSender that may be set.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethSenderOverrideShow`
+This task displays any sender override, if set.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethSolidityChooseCompiler` 
+### `ethSolidityChooseCompiler`
+This task manually selects among solidity compilers available to this project.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethSolidityCompile`
+This task compiles solidity files.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethSolidityDestination`
+This setting defines the location for compiled solidity code and metadata.
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethSolidityInstallCompiler` 
+### `ethSolidityInstallCompiler`
+This task installs a best-attempt platform-specific solidity compiler into the `sbt-ethereum` repository (or choose a supported version).
 Sample usage:
 ```tut
 1 + 1
 ```
 
-### `ethSolidityShowCompiler` 
+### `ethSolidityShowCompiler`
+This task displays the currently active Solidity compiler.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethSoliditySource`
+This setting defines the solidity source code directory.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethTargetDir`
+This setting defines the location in the target directory where ethereum artifacts will be placed.
 Sample usage:
 ```tut
 1 + 1
@@ -427,13 +469,15 @@ Sample usage:
 1 + 1
 ```
 
-### `ethTestrpcLocalStart` 
+### `ethTestrpcLocalStart`
+This task starts a local `testrpc` environment (if the command `testrpc` is in your `PATH`).
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `ethTestrpcLocalStop`
+This task stops any local `testrpc` environment that may have been started previously.
 Sample usage:
 ```tut
 1 + 1
@@ -443,79 +487,91 @@ Sample usage:
 There are "advanced" tasks:
 
 ### `xethDefaultGasPrice`
+This task finds the current default gas price.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethEphemeralBlockchains`
+This setting defines the IDs of blockchains that should be considered ephemeral (so their deployments should not be retained).
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethFindCacheAliasesIfAvailable`
+This task finds and caches aliases for use by address parsers.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethFindCacheOmitDupsCurrentCompilations`
+This task finds and caches compiled, deployable contract names, omitting ambiguous duplicates. Triggered by `ethSolidityCompile`.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethFindCacheSessionSolidityCompilerKeys`
+This task finds and caches keys for available compilers for use parser for `ethSolidityCompilerSet`.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethFindCurrentSender`
+This task finds the address that should be used to send ether or messages.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethFindCurrentSolidityCompiler`
+This task finds and caches keys for the available compilers for use parser for `ethSolidityCompilerSet`.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethGasOverrideDrop`
+This task removes any previously set gas override, reverting to the usual automatic marked-up estimation of gas required for a transaction.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethGasOverrideSet`
+This task defines a value which overrides the usual automatic marked-up estimation of gas required for a transaction.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethGasOverrideShow`
+This task displays the current gas override, if set.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethGasPrice`
+This task finds the current gas price, including any overrides or gas price markups.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethGasPriceOverrideDrop`
+This task removes any previously set gas price override, reverting to the usual automatic marked-up default.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethGasPriceOverrideSet`
-FIXME what does this do?
+This task defines a value which overrides the usual automatic marked-up default gas price that will be paid for a transaction.
 Sample usage:
 ```sbtshell
 > xethGasPriceOverrideSet 5 gwei
@@ -524,162 +580,189 @@ Sample usage:
 ```
 
 ### `xethGasPriceOverrideShow`
+This task displays the current gas price override, if set.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethGenKeyPair`
+This task generates a new key pair, using ethEntropySource as a source of randomness.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethGenScalaStubsAndTestingResources`
+This task generates stubs for compiled Solidity contracts, and resources helpful in testing them.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethInvokeData`
+This task reveals the data portion that would be sent in a message invoking a function and its arguments on a deployed smart contract.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethKeystoreCreateWalletV3Pbkdf2`
+This task generates a new `pbkdf2` V3 wallet, using `ethEntropySource` as a source of randomness.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethKeystoreCreateWalletV3Scrypt`
+This task generates a new `scrypt` V3 wallet, using `ethEntropySource` as a source of randomness.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethLoadAbiFor`
+This task finds the ABI for a contract address, if known.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethLoadCompilationsKeepDups`
+This task loads compiled solidity contracts, permitting multiple nonidentical contracts of the same name.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethLoadCompilationsOmitDups`
+This task loads compiled solidity contracts, omitting contracts with multiple nonidentical contracts of the same name.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethLoadWalletV3`
+This task loads a V3 wallet from ethWalletsV3 for current sender.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethLoadWalletV3For`
+This task loads a V3 wallet from ethWalletsV3.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethNamedAbiSource`
+This setting defines the location where files containing json files containing ABIs for which stubs should be generated. Each as '<stubname>.json'.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethNamedAbis`
+This task loads any named ABIs from the `xethNamedAbiSource` directory.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethNextNonce`
+This task finds the next nonce for the current sender.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethQueryRepositoryDatabase`
+This task is primarily for debugging. It queries the internal repository database.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethTestingResourcesObjectName`
+This setting defines the name of the Scala object that will be automatically generated with resources for tests.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethTriggerDirtyAliasCache`
+This task updates of the cache of aliases used for tab completions.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethTriggerDirtySolidityCompilerList`
+This task updates the cache of available solidity compilers used for tab completions.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethUpdateContractDatabase`
+This task integrates newly compiled contracts into the contract database. Returns true if changes were made.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethUpdateRepositoryDatabase`
+This task is primarily for development and debugging. It updates the internal repository database with arbitrary SQL.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethUpdateSessionSolidityCompilers`
+This task finds and tests potential Solidity compilers to see which is available.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethWalletV3Pbkdf2C`
+This setting defines the value to use for parameter C when generating pbkdf2 V3 wallets.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethWalletV3Pbkdf2DkLen`
+This setting defines the derived key length parameter used when generating pbkdf2 V3 wallets.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethWalletV3ScryptDkLen`
+This setting defines the derived key length parameter used when generating Scrypt V3 wallets.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethWalletV3ScryptN`
+This setting defines the value to use for parameter `N` when generating Scrypt V3 wallets.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethWalletV3ScryptP`
+This setting defines the value to use for parameter `P` when generating Scrypt V3 wallets.
 Sample usage:
 ```tut
 1 + 1
 ```
 
 ### `xethWalletV3ScryptR`
+This setting defines the value to use for parameter `R` when generating Scrypt V3 wallets.
 Sample usage:
 ```tut
 1 + 1
