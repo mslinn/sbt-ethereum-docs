@@ -22,7 +22,7 @@ There are three types of activities you can perform with `sbt-ethereum`:
      $ cd sbt-ethereum-seed
      ```
 
-## sbt-ethereum Commands
+## sbt-ethereum Tasks
 From the `sbt-ethereum-seed` directory, start SBT:
 ```
 $ sbt
