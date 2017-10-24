@@ -1,4 +1,5 @@
 .ensime*
+_book/
 logs
 *.sublime*
 Notepad++/
