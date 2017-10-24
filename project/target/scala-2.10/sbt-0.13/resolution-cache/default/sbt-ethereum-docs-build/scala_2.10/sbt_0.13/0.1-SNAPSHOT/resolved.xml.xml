@@ -4,7 +4,7 @@
 		module="sbt-ethereum-docs-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171024104519"
+		publication="20171024182628"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
@@ -25,6 +25,7 @@
 		<conf name="docs" visibility="public" description=""/>
 		<conf name="pom" visibility="public" description=""/>
 		<conf name="scala-tool" visibility="private" description=""/>
+		<conf name="ensime-internal" visibility="private" description=""/>
 	</configurations>
 	<publications>
 		<artifact name="sbt-ethereum-docs-build" type="pom" ext="pom" conf="pom"/>
@@ -33,8 +34,11 @@
 		<artifact name="sbt-ethereum-docs-build" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 	</publications>
 	<dependencies>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.6" transitive="false" conf="ensime-internal->default(compile)"/>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.6" conf="scala-tool->default,optional(default)"/>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.10.6" conf="scala-tool->default,optional(default);provided->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.6" transitive="false" conf="ensime-internal->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.6" conf="provided->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.6" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-sbt" name="sbt" rev="0.13.16" conf="provided->default(compile)"/>
 		<dependency org="org.scala-sbt" name="global-plugins" rev="0.0" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10">
 			<artifact name="global-plugins" type="pom" ext="pom" conf="pom"/>
@@ -42,6 +46,8 @@
 			<artifact name="global-plugins" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="global-plugins" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
+		<dependency org="org.scala-lang" name="scala-reflect" rev="2.10.6" transitive="false" conf="ensime-internal->default(compile)"/>
+		<dependency org="org.scala-lang" name="scalap" rev="2.10.6" transitive="false" conf="ensime-internal->default(compile)"/>
 		<dependency org="org.tpolecat" name="tut-plugin" rev="0.5.5" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
 	</dependencies>
 </ivy-module>

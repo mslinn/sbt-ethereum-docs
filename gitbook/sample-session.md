@@ -208,7 +208,7 @@ The query cost a tiny bit.
 [success] Total time: 0 s, completed Oct 23, 2017 4:27:11 PM
 ```
 
-![](images/etherScan.png)
+![](../images/etherScan.png)
 
 ```
 > ethInvokeConstant 0x019e39e4c8c46034b1c0da2d26f99cc6a1ae941b asdf 1234
