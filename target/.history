@@ -2,3 +2,6 @@
 publishLocal
 tut
 ;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo C:/Users/mslin/AppData/Local/Temp/sbt-structure.xml
+tut
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers resolveSbtClassifiers" ;*/*:dumpStructureTo C:/Users/mslin/AppData/Local/Temp/sbt-structure.xml
+tut

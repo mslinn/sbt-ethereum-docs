@@ -1,6 +1,7 @@
 [0m[[0mdebug[0m] [0mOther repositories:[0m
 [0m[[0mdebug[0m] [0mDefault repositories:[0m
 [0m[[0mdebug[0m] [0mUsing inline dependencies specified in Scala.[0m
+[0m[[0mdebug[0m] [0mno default cache defined: set to C:\Users\mslin\.ivy2\cache[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: default#sbt-ethereum-docs$sbt_2.10;0.1-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [default][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -10,7 +11,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies default#sbt-ethereum-docs$sbt_2.10;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.16 [default->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-sbt#sbt;0.13.16 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.16 {default=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0mno default cache defined: set to C:\Users\mslin\.ivy2\cache[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.16[0m
 [0m[[0mdebug[0m] [0m	found org.scala-sbt#sbt;0.13.16 in sbt-chain[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]}[0m
@@ -1803,9 +1803,9 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.16!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 972ms :: artifacts dl 34ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 837ms :: artifacts dl 36ms[0m
 [0m[[0mdebug[0m] [0m	report for default#sbt-ethereum-docs$sbt_2.10;0.1-SNAPSHOT default produced in C:\work\experiments\ethereum\sbt-ethereum-docs\target\scala-2.10\resolution-cache\reports\default-sbt-ethereum-docs$sbt_2.10-default.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (972ms resolve - 34ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (837ms resolve - 36ms download)[0m
 [0m[[0mdebug[0m] [0mUsing inline dependencies specified in Scala.[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: default#sbt-ethereum-docs$sources_2.10;0.1-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [default][0m
@@ -2516,6 +2516,6 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#tracking;0.13.16!tracking.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.16!test-agent.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#command;0.13.16!command.jar(src)[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 754ms :: artifacts dl 35ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 632ms :: artifacts dl 32ms[0m
 [0m[[0mdebug[0m] [0m	report for default#sbt-ethereum-docs$sources_2.10;0.1-SNAPSHOT default produced in C:\work\experiments\ethereum\sbt-ethereum-docs\target\scala-2.10\resolution-cache\reports\default-sbt-ethereum-docs$sources_2.10-default.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (754ms resolve - 35ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (632ms resolve - 32ms download)[0m

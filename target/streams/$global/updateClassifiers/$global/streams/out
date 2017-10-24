@@ -490,7 +490,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.6!scala-compiler.jar(src)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.tpolecat#tut-core_2.10;0.5.5!tut-core_2.10.jar(src)[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 157ms :: artifacts dl 7ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 119ms :: artifacts dl 4ms[0m
 [0m[[0mdebug[0m] [0m	report for default#sbt-ethereum-docs$sources_2.10;0.1-SNAPSHOT compile produced in C:\work\experiments\ethereum\sbt-ethereum-docs\target\scala-2.10\resolution-cache\reports\default-sbt-ethereum-docs$sources_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#sbt-ethereum-docs$sources_2.10;0.1-SNAPSHOT runtime produced in C:\work\experiments\ethereum\sbt-ethereum-docs\target\scala-2.10\resolution-cache\reports\default-sbt-ethereum-docs$sources_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#sbt-ethereum-docs$sources_2.10;0.1-SNAPSHOT test produced in C:\work\experiments\ethereum\sbt-ethereum-docs\target\scala-2.10\resolution-cache\reports\default-sbt-ethereum-docs$sources_2.10-test.xml[0m
@@ -505,4 +505,4 @@
 [0m[[0mdebug[0m] [0m	report for default#sbt-ethereum-docs$sources_2.10;0.1-SNAPSHOT pom produced in C:\work\experiments\ethereum\sbt-ethereum-docs\target\scala-2.10\resolution-cache\reports\default-sbt-ethereum-docs$sources_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#sbt-ethereum-docs$sources_2.10;0.1-SNAPSHOT scala-tool produced in C:\work\experiments\ethereum\sbt-ethereum-docs\target\scala-2.10\resolution-cache\reports\default-sbt-ethereum-docs$sources_2.10-scala-tool.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#sbt-ethereum-docs$sources_2.10;0.1-SNAPSHOT tut produced in C:\work\experiments\ethereum\sbt-ethereum-docs\target\scala-2.10\resolution-cache\reports\default-sbt-ethereum-docs$sources_2.10-tut.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (157ms resolve - 7ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (119ms resolve - 4ms download)[0m

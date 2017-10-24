@@ -2,7 +2,8 @@
 
 Here is how you add numbers:
 ```scala
-1 + 1
+scala> 1 + 1
+res0: Int = 2
 ```
 
 More to come.

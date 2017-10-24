@@ -4,7 +4,7 @@
 		module="sbt-ethereum-docs$sources_2.10"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171024105218"
+		publication="20171024110314"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

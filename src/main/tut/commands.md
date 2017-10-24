@@ -1,7 +1,7 @@
 # sbt-ethereum Commands
 
 Here is how you add numbers:
-```tut:silent
+```tut
 1 + 1
 ```
 
