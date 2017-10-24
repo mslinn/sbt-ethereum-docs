@@ -1,0 +1,4 @@
+[0m[[0minfo[0m] [0m:: delivering :: default#sbt-ethereum-docs_2.10;0.1-SNAPSHOT :: 0.1-SNAPSHOT :: integration :: Tue Oct 24 10:50:37 PDT 2017[0m
+[0m[[0mdebug[0m] [0m	options = status=integration pubdate=Tue Oct 24 10:50:37 PDT 2017 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
+[0m[[0minfo[0m] [0m	delivering ivy file to C:\work\experiments\ethereum\sbt-ethereum-docs\target\scala-2.10\ivy-0.1-SNAPSHOT.xml[0m
+[0m[[0mdebug[0m] [0m	deliver done (124ms)[0m

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="default"
+		module="sbt-ethereum-docs$sources_2.10"
+		revision="0.1-SNAPSHOT"
+		conf="tut"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, tut"
+		date="20171024105218"/>
+	<dependencies>
+		<module organisation="org.tpolecat" name="tut-core_2.10">
+			<revision name="0.5.5" status="release" pubdate="20170906102253" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="3">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="2779" time="0" location="C:\Users\mslin\.ivy2\cache\org.tpolecat\tut-core_2.10\ivy-0.5.5.xml" searched="false" origin-is-local="false" origin-location="http://dl.bintray.com/tpolecat/maven/org/tpolecat/tut-core_2.10/0.5.5/tut-core_2.10-0.5.5.pom"/>
+				<caller organisation="default" name="sbt-ethereum-docs$sources_2.10" conf="tut, compile" rev="0.5.5" rev-constraint-default="0.5.5" rev-constraint-dynamic="0.5.5" callerrev="0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="tut-core_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="10442" time="0" location="C:\Users\mslin\.ivy2\cache\org.tpolecat\tut-core_2.10\srcs\tut-core_2.10-0.5.5-sources.jar">
+						<origin-location is-local="false" location="http://dl.bintray.com/tpolecat/maven/org/tpolecat/tut-core_2.10/0.5.5/tut-core_2.10-0.5.5-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-compiler">
+			<revision name="2.10.6" status="release" pubdate="20150918023547" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="2">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
+				<metadata-artifact status="no" details="" size="2843" time="0" location="C:\Users\mslin\.ivy2\cache\org.scala-lang\scala-compiler\ivy-2.10.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.10.6/scala-compiler-2.10.6.pom"/>
+				<caller organisation="default" name="sbt-ethereum-docs$sources_2.10" conf="tut, compile" rev="2.10.6" rev-constraint-default="2.10.6" rev-constraint-dynamic="2.10.6" callerrev="0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="scala-compiler" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2059305" time="0" location="C:\Users\mslin\.ivy2\cache\org.scala-lang\scala-compiler\srcs\scala-compiler-2.10.6-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.10.6/scala-compiler-2.10.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.10.6" status="release" pubdate="20150918023538" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/" downloaded="false" searched="false" default="false" conf="master(*), compile, runtime(*), runtime, compile(*), master" position="1">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
+				<metadata-artifact status="no" details="" size="2680" time="0" location="C:\Users\mslin\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.10.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.6/scala-reflect-2.10.6.pom"/>
+				<caller organisation="default" name="sbt-ethereum-docs$sources_2.10" conf="tut, compile" rev="2.10.6" rev-constraint-default="2.10.6" rev-constraint-dynamic="2.10.6" callerrev="0.1-SNAPSHOT" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="435463" time="0" location="C:\Users\mslin\.ivy2\cache\org.scala-lang\scala-reflect\srcs\scala-reflect-2.10.6-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.6/scala-reflect-2.10.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.10.6" status="release" pubdate="20150918023528" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/" downloaded="false" searched="false" default="false" conf="default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="0">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2517" time="0" location="C:\Users\mslin\.ivy2\cache\org.scala-lang\scala-library\ivy-2.10.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.6/scala-library-2.10.6.pom"/>
+				<caller organisation="default" name="sbt-ethereum-docs$sources_2.10" conf="tut, compile" rev="2.10.6" rev-constraint-default="2.10.6" rev-constraint-dynamic="2.10.6" callerrev="0.1-SNAPSHOT" extra-info.apiURL="http://www.scala-lang.org/api/2.10.6/"/>
+				<artifacts>
+					<artifact name="scala-library" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1065535" time="0" location="C:\Users\mslin\.ivy2\cache\org.scala-lang\scala-library\srcs\scala-library-2.10.6-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.6/scala-library-2.10.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
