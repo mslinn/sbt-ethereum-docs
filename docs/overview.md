@@ -4,8 +4,8 @@ There are three types of activities you can perform with `sbt-ethereum`:
 
   1. Running ad-hoc, interactive commands, performed in the SBT REPL.
      These commands are provided by `sbt-ethereum`.
-  2. Defining and running SBT tasks that wrap the above `sbt-ethereum` SBT commands into custom commands for your needs.
-  3. Running a program that executes Solidity commands.
+  2. Defining and running SBT tasks that wrap the above `sbt-ethereum` SBT commands into custom SBT commands for your needs.
+  3. Compiling and running a program that executes Solidity commands using functionality provided by `sbt-ethereum`.
 
 ## Getting Started
   1. Obtain a token from [infura.io](https://infura.io) and store it in an environment variable called `INFURA_TOKEN`.
@@ -13,13 +13,16 @@ There are three types of activities you can perform with `sbt-ethereum`:
      ```
      export INFURA_TOKEN="blahblahblah"
      ```
-  2. Clone [sbt-ethereum-seed](https://github.com/mslinn/sbt-ethereum-seed)
+  2. Clone [sbt-ethereum-seed](https://github.com/mslinn/sbt-ethereum-seed):
+     ```angular2html
+     git clone git@github.com:mslinn/sbt-ethereum-seed.git
+     ```
   3. Move to the top-level directory of your copy of `sbt-ethereum-seed`:
      ```
      $ cd sbt-ethereum-seed
      ```
 
-## Running Ad-Hoc Ethereum Commands
+## sbt-ethereum Commands
 From the `sbt-ethereum-seed` directory, start SBT:
 ```
 $ sbt

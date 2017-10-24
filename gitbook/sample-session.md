@@ -1,14 +1,6 @@
 # Sample Session
 
 ```
-/usr/lib/jvm/java-8-oracle/bin/java -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:37943,suspend=y,server=n -Xms512M -Xmx1024M -Xss1M -XX:+CMSClassUnloadingEnabled -Dfile.encoding=UTF-8 -classpath /home/mslinn/.IntelliJIdea2017.2/config/plugins/Scala/launcher/sbt-launch.jar:/opt/idea-IU-171.3780.107/lib/idea_rt.jar xsbt.boot.Boot
-Connected to the target VM, address: '127.0.0.1:37943', transport: 'socket'
-[info] Loading global plugins from /home/mslinn/.sbt/0.13/plugins
-[info] Loading project definition from /mnt/_/work/experiments/ethereum/my-scala-solidity-project/project
-15:54:10.756 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
-[info] Set current project to my-scala-solidity-project (in build file:/mnt/_/work/experiments/ethereum/my-scala-solidity-project/)
-2017-10-23 15:54:14.537:INFO::pool-8-thread-1: Logging initialized @8412ms to org.eclipse.jetty.util.log.StdErrLog
-[info] Updating available solidity compiler set.
 > show ethJsonRpcUrl
 show ethJsonRpcUrl
 [info] https://mainnet.infura.io/xxxx
