@@ -1,8 +1,5 @@
 // Tut is configured to read documentation source (markdown and html) from the docs/ directory, and to
 // write output (for gitbook) to the gitbook/ directory.
-//
-// To build and publish docs, type:
-// sbt tut && git commit -am - && git push
 
 name := "sbt-ethereum-docs"
 scalaVersion := "2.12.4"
