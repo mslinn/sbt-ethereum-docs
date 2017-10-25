@@ -15,14 +15,24 @@ There are three types of activities you can perform with the the family of proje
   If your machine does not already have one installed, you can download a 
   [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
   or a full [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
-2. A [Git] client must be installed.
-  This documentation assumes the standard git command-line client, but you can use a gui-based git client if you prefer.
+2. Optional: [Git](https://git-scm.com/) client.
+   This documentation assumes the standard git command-line client, but you can use a gui-based git client if you prefer.
 
 ## Quick Start
-1. Clone `eth-command-line`:
-   ```
-   $ git clone git@github.com:swaldman/eth-command-line.git
-   ```
+1. You can use `git` or download a zip file to obtain `eth-command-line`.
+   a. To use the `git` command line, type:
+     ```
+     $ git clone git@github.com:swaldman/eth-command-line.git
+     ```
+   b. If you [download](https://github.com/swaldman/eth-command-line/archive/master.zip) a zip file 
+       containing the `eth-command-line` project, you need to set the script executable after downloading by typing:
+       ```
+       $ mkdir eth-command-line
+       $ cd eth-command-line
+       $ wget -O eth-command-line https://github.com/swaldman/eth-command-line/archive/master.zip
+       $ unzip eth-command-line
+       $ cd chmod a+x eth-command-line
+       ```
 2. Move to the `eth-command-line` directory that was just created.
    ```
    $ cd eth-command-line
