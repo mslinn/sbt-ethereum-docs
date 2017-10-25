@@ -1,7 +1,10 @@
 # Summary
 
-* [Overview](gitbook/overview.md)
-  * [Getting Started](gitbook/overview.md#getting-started)
+* [Overview](gitbook/overview.md#overview)
+  * [Prerequisites](gitbook/overview.md#prerequisites)
+  * [Quick Start](gitbook/overview.md#quick-start)
+  * [Using Infura's Ethereum nodes](gitbook/overview.md#using-infuras-ethereum-nodes)
+  * [Custom Projects](gitbook/overview.md#custom-projects)
   * [Introduction to Tasks and Settings](gitbook/overview.md#introduction-to-tasks-and-settings)
 * [Sample Session](gitbook/sample-session.md)
 * [SBT Tasks and Settings](gitbook/tasks.md)

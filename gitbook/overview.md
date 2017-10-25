@@ -4,28 +4,100 @@ There are three types of activities you can perform with the the family of proje
 
   1. Use `eth-command-line` to interactively run ad-hoc commands.
      These commands are actually SBT tasks and settings defined by `sbt-ethereum`, which you type into the SBT REPL.
-     You do not need to know SBT, or Scala, or even be a programmer, in order to use `eth-command-line`.
+     You do not need to know SBT, or Scala, or even be a programmer, in order to use `eth-command-line` effectively.
+     However, Scala programmers who understand SBT will be able to do more than those who do not.
   2. Define and run SBT tasks that wrap the `sbt-ethereum` SBT tasks into custom SBT tasks for your needs.
   3. Compile and run Scala programs that execute Solidity programs using functionality provided by `sbt-ethereum`.
      This is particularly useful when integrating Solidity into existing infrastructure.
 
-## Getting Started
+## Prerequisites
+1. A Java 8 runtime environment must be installed.
+  If your machine does not already have one installed, you can download a 
+  [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
+  or a full [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+2. A [Git] client must be installed.
+  This documentation assumes the standard git command-line client, but you can use a gui-based git client if you prefer.
+
+## Quick Start
+1. Clone `eth-command-line`:
+   ```
+   $ git clone git@github.com:swaldman/eth-command-line.git
+   ```
+2. Move to the `eth-command-line` directory that was just created.
+   ```
+   $ cd eth-command-line
+   ```
+3. Execute the `eth-command-line` shell script . 
+   The first time you do this, *many* dependencies be downloaded.
+   At a minimum, you will see the following output:
+   ```
+   $ eth-command-line
+   [info] Loading global plugins from /home/mslinn/.sbt/0.13/plugins
+   [info] Loading project definition from /mnt/_/work/eth-command-line/project
+   13:06:15.449 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+   [info] Set current project to eth-command-line (in build file:/mnt/_/work/eth-command-line/)
+   13:06:17.553 [pool-8-thread-1] INFO  org.eclipse.jetty.util.log - Logging initialized @7610ms to org.eclipse.jetty.util.log.Slf4jLog
+   [info] Updating available solidity compiler set.
+   ```
+4. At the `eth ~> ` prompt, begin typing ethereum-related commands. 
+   To see a list of all `eth-command-line` tasks and settings, type `eth<tab>` and `xeth<tab>`.
+5. Before you can run tasks that require the payment of Ether, such as sending ether 
+   ([ethSendEther](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethsendether)) or
+   invoking state-changing smart-contract tasks 
+   ([ethInvoke](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethinvoke)), 
+   you will need to first define the ethereum address from which the operation will originate. 
+   You can create a new address using the
+   [ethKeystoreCreateWalletV3](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethkeystorecreatewalletv3) 
+   task.
+   ```
+   eth ~> ethKeystoreCreateWalletV3
+   [info] Generated keypair for address '0xc33071ead8753b04e0ee108cc168f2b22f93525d'
+   [info] Generating V3 wallet, alogorithm=scrypt, n=262144, r=8, p=1, dklen=32
+   Enter passphrase for new wallet: *******************
+   Please retype to confirm: *******************
+   [success] Total time: 31 s, completed Dec 30, 2016 7:53:11 AM
+
+   ```
+   You can also import any existing `geth` wallets into the `sbt-ethereum` repository directory.
+   HOW?
+
+   *Be sure to back up your `sbt-ethereum` repository directory to avoid losing your wallets
+   and accounts!* (TODO HOW?)
+6. Once you have a generated or imported a wallet and transferred some Ether to it,
+   set `ethAddress` to `eth-command-line` to use that account for fund transfers or method invocations as shown in this example:
+   ```
+   eth ~> set ethAddress := "0xc33071ead8753b04e0ee108cc168f2b22f93525d"
+
+   ```
+   (Do not forget to replace the hex string above with your own Ethereum address!)
+   
+## Using Infura's Ethereum nodes
+`eth-command-line` and `sbt-ethereum` can work with any Ethereum node.
+If you do not want to use our Ethereum node, and you do not want to go through the process of setting up your own Ethereum node, 
+you can an use any other node.
+For example, here is how to configure `eth-command-line` and/or `sbt-ethereum` to work with Infura's Ethereum nodes:
+
   1. Obtain a token from [infura.io](https://infura.io) and store it in an environment variable called `INFURA_TOKEN`.
      This token is referenced in `build.sbt`.
      ```
      export INFURA_TOKEN="blahblahblah"
      ```
-  2. Clone [sbt-ethereum-seed](https://github.com/mslinn/sbt-ethereum-seed):
+
+## Custom Projects
+The `sbt-ethereum-seed` project is a handy starting point for custom projects based on `sbt-ethereum`, 
+and it also supports all of the functionality of `eth-command-line`:
+  1. Clone [sbt-ethereum-seed](https://github.com/mslinn/sbt-ethereum-seed):
      ```
      git clone git@github.com:swaldman/eth-command-line.git
      ```
-  3. Move to the top-level directory of your copy of `eth-command-line`:
+  2. Move to the top-level directory of your copy of `eth-command-line`:
      ```
      $ cd eth-command-line
      ```
-
+  3. Configure the Ethereum node by editing `build.sbt` as described in the preceding two sections.
+  
 ## Introduction to Tasks and Settings
-From the `eth-command-line` or `sbt-ethereum-seed` directory, start SBT:
+From the top-level directory of any SBT project based on `sbt-ethereum`, start SBT:
 ```
 $ sbt
 [info] Loading global plugins from /home/mslinn/.sbt/0.13/plugins
