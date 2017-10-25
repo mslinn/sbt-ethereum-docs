@@ -25,6 +25,7 @@ val commitAndPublishGitbook =
 commitAndPublishGitbook := {
   val dependOnTut: Seq[(File, String)] = tut.value
   "git commit -am -".!
+  println("asdf")
   "git push".!
 }
 
