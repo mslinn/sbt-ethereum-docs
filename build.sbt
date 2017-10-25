@@ -23,3 +23,4 @@ commitAndPublishGitbook := {
   val dependOnTut = tut.value
   "git commit -am -" #&& "git push" !
 }
+
