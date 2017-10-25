@@ -436,10 +436,19 @@ Instead of `wei`, you can use denominations `ether`, `finney`, or `szabo`.
 
 ### `ethSender`
 This setting defines the address from which transactions will be sent.
-Sample usage:
-```tut
-1 + 1
-```
+The value will be stable throughout your interactive session (unless you reset it with set ethSender as above). 
+You will be prompted for the passphrase only once. 
+Be careful, as commands to send ether or deploy contracts will execute without further ceremony!
+
+To set `ethSender` via the SBT command like, type:
+
+    > set ethSender := "0x465e79b940bc2157e4259ff6b2d92f454497f1e4"
+
+You can also specify the ethereum address you wish to work from directly within a `build.sbt` file, by specifying:
+
+    ethSender := "0x465e79b940bc2157e4259ff6b2d92f454497f1e4"
+
+However, if you are distributing your code, an specifying `ethSender` in the build file will not be helpful for other developers.
 
 ### `ethSenderOverrideDrop`
 This task removes any sender override, reverting to any [ethSender](#ethsender) or [defaultSender](#defaultsender) that may be set.

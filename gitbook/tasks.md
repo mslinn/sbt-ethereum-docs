@@ -454,18 +454,26 @@ Instead of `wei`, you can use denominations `ether`, `finney`, or `szabo`.
 
 ### `ethSender`
 This setting defines the address from which transactions will be sent.
-Sample usage:
-```scala
-scala> 1 + 1
-res18: Int = 2
-```
+The value will be stable throughout your interactive session (unless you reset it with set ethSender as above). 
+You will be prompted for the passphrase only once. 
+Be careful, as commands to send ether or deploy contracts will execute without further ceremony!
+
+To set `ethSender` via the SBT command like, type:
+
+    > set ethSender := "0x465e79b940bc2157e4259ff6b2d92f454497f1e4"
+
+You can also specify the ethereum address you wish to work from directly within a `build.sbt` file, by specifying:
+
+    ethSender := "0x465e79b940bc2157e4259ff6b2d92f454497f1e4"
+
+However, if you are distributing your code, an specifying `ethSender` in the build file will not be helpful for other developers.
 
 ### `ethSenderOverrideDrop`
 This task removes any sender override, reverting to any [ethSender](#ethsender) or [defaultSender](#defaultsender) that may be set.
 Sample usage:
 ```scala
 scala> 1 + 1
-res19: Int = 2
+res18: Int = 2
 ```
 
 ### `ethSenderOverrideSet`
@@ -473,7 +481,7 @@ This task sets an ethereum address to be used as sender in preference to any [et
 Sample usage:
 ```scala
 scala> 1 + 1
-res20: Int = 2
+res19: Int = 2
 ```
 
 ### `ethSenderOverrideShow`
@@ -481,7 +489,7 @@ This task displays any sender override, if set.
 Sample usage:
 ```scala
 scala> 1 + 1
-res21: Int = 2
+res20: Int = 2
 ```
 
 ### `ethSolidityChooseCompiler`
@@ -489,7 +497,7 @@ This task manually selects among solidity compilers available to this project.
 Sample usage:
 ```scala
 scala> 1 + 1
-res22: Int = 2
+res21: Int = 2
 ```
 
 ### `ethSolidityCompile`
@@ -497,7 +505,7 @@ This task compiles solidity files.
 Sample usage:
 ```scala
 scala> 1 + 1
-res23: Int = 2
+res22: Int = 2
 ```
 
 ### `ethSolidityDestination`
@@ -505,7 +513,7 @@ This setting defines the location for compiled solidity code and metadata.
 Sample usage:
 ```scala
 scala> 1 + 1
-res24: Int = 2
+res23: Int = 2
 ```
 
 ### `ethSolidityInstallCompiler`
@@ -513,7 +521,7 @@ This task attempts to install a platform-specific Solidity compiler into the `sb
 Sample usage:
 ```scala
 scala> 1 + 1
-res25: Int = 2
+res24: Int = 2
 ```
 
 ### `ethSolidityShowCompiler`
@@ -521,7 +529,7 @@ This task displays the currently active Solidity compiler.
 Sample usage:
 ```scala
 scala> 1 + 1
-res26: Int = 2
+res25: Int = 2
 ```
 
 ### `ethSoliditySource`
@@ -529,7 +537,7 @@ This setting defines the Solidity source code directory.
 Sample usage:
 ```scala
 scala> 1 + 1
-res27: Int = 2
+res26: Int = 2
 ```
 
 ### `ethTargetDir`
@@ -537,14 +545,14 @@ This setting defines the location in the target directory where Ethereum artifac
 Sample usage:
 ```scala
 scala> 1 + 1
-res28: Int = 2
+res27: Int = 2
 ```
 
 ### `ethTestrpcLocalRestart` 
 Sample usage:
 ```scala
 scala> 1 + 1
-res29: Int = 2
+res28: Int = 2
 ```
 
 ### `ethTestrpcLocalStart`
@@ -552,7 +560,7 @@ This task starts a local `testrpc` environment (if the command `testrpc` is in y
 Sample usage:
 ```scala
 scala> 1 + 1
-res30: Int = 2
+res29: Int = 2
 ```
 
 ### `ethTestrpcLocalStop`
@@ -560,7 +568,7 @@ This task stops any local `testrpc` environment that may have been started previ
 Sample usage:
 ```scala
 scala> 1 + 1
-res31: Int = 2
+res30: Int = 2
 ```
 
 ## `xeth` SBT Tasks
@@ -571,7 +579,7 @@ This task finds the current default gas price.
 Sample usage:
 ```scala
 scala> 1 + 1
-res32: Int = 2
+res31: Int = 2
 ```
 
 ### `xethEphemeralBlockchains`
@@ -579,7 +587,7 @@ This setting defines the IDs of blockchains that should be considered ephemeral 
 Sample usage:
 ```scala
 scala> 1 + 1
-res33: Int = 2
+res32: Int = 2
 ```
 
 ### `xethFindCacheAliasesIfAvailable`
@@ -587,7 +595,7 @@ This task finds and caches aliases for use by address parsers.
 Sample usage:
 ```scala
 scala> 1 + 1
-res34: Int = 2
+res33: Int = 2
 ```
 
 ### `xethFindCacheOmitDupsCurrentCompilations`
@@ -596,7 +604,7 @@ It is triggered by [ethSolidityCompile](#ethsoliditycompile).
 Sample usage:
 ```scala
 scala> 1 + 1
-res35: Int = 2
+res34: Int = 2
 ```
 
 ### `xethFindCacheSessionSolidityCompilerKeys`
@@ -604,7 +612,7 @@ This task finds and caches keys for available compilers for use parser for [ethS
 Sample usage:
 ```scala
 scala> 1 + 1
-res36: Int = 2
+res35: Int = 2
 ```
 
 ### `xethFindCurrentSender`
@@ -612,7 +620,7 @@ This task finds the address that should be used to send ether or messages.
 Sample usage:
 ```scala
 scala> 1 + 1
-res37: Int = 2
+res36: Int = 2
 ```
 
 ### `xethFindCurrentSolidityCompiler`
@@ -620,7 +628,7 @@ This task finds and caches keys for the available compilers for use parser for [
 Sample usage:
 ```scala
 scala> 1 + 1
-res38: Int = 2
+res37: Int = 2
 ```
 
 ### `xethGasOverrideDrop`
@@ -628,7 +636,7 @@ This task removes any previously set gas override, reverting to the usual automa
 Sample usage:
 ```scala
 scala> 1 + 1
-res39: Int = 2
+res38: Int = 2
 ```
 
 ### `xethGasOverrideSet`
@@ -636,7 +644,7 @@ This task defines a value which overrides the usual automatic marked-up estimati
 Sample usage:
 ```scala
 scala> 1 + 1
-res40: Int = 2
+res39: Int = 2
 ```
 
 ### `xethGasOverrideShow`
@@ -644,7 +652,7 @@ This task displays the current gas override, if set.
 Sample usage:
 ```scala
 scala> 1 + 1
-res41: Int = 2
+res40: Int = 2
 ```
 
 ### `xethGasPrice`
@@ -652,7 +660,7 @@ This task finds the current gas price, including any overrides or gas price mark
 Sample usage:
 ```scala
 scala> 1 + 1
-res42: Int = 2
+res41: Int = 2
 ```
 
 ### `xethGasPriceOverrideDrop`
@@ -660,7 +668,7 @@ This task removes any previously set gas price override, reverting to the usual 
 Sample usage:
 ```scala
 scala> 1 + 1
-res43: Int = 2
+res42: Int = 2
 ```
 
 ### `xethGasPriceOverrideSet`
@@ -677,7 +685,7 @@ This task displays the current gas price override, if set.
 Sample usage:
 ```scala
 scala> 1 + 1
-res44: Int = 2
+res43: Int = 2
 ```
 
 ### `xethGenKeyPair`
@@ -685,7 +693,7 @@ This task generates a new key pair, using [ethEntropySource](#ethentropysource) 
 Sample usage:
 ```scala
 scala> 1 + 1
-res45: Int = 2
+res44: Int = 2
 ```
 
 ### `xethGenScalaStubsAndTestingResources`
@@ -693,7 +701,7 @@ This task generates stubs for compiled Solidity contracts, and resources helpful
 Sample usage:
 ```scala
 scala> 1 + 1
-res46: Int = 2
+res45: Int = 2
 ```
 
 ### `xethInvokeData`
@@ -701,7 +709,7 @@ This task reveals the data portion that would be sent in a message invoking a fu
 Sample usage:
 ```scala
 scala> 1 + 1
-res47: Int = 2
+res46: Int = 2
 ```
 
 ### `xethKeystoreCreateWalletV3Pbkdf2`
@@ -709,7 +717,7 @@ This task generates a new `pbkdf2` V3 wallet, using [ethEntropySource](#ethentro
 Sample usage:
 ```scala
 scala> 1 + 1
-res48: Int = 2
+res47: Int = 2
 ```
 
 ### `xethKeystoreCreateWalletV3Scrypt`
@@ -717,7 +725,7 @@ This task generates a new `scrypt` V3 wallet, using [ethEntropySource](#ethentro
 Sample usage:
 ```scala
 scala> 1 + 1
-res49: Int = 2
+res48: Int = 2
 ```
 
 ### `xethLoadAbiFor`
@@ -725,7 +733,7 @@ This task finds the ABI for a contract address, if known.
 Sample usage:
 ```scala
 scala> 1 + 1
-res50: Int = 2
+res49: Int = 2
 ```
 
 ### `xethLoadCompilationsKeepDups`
@@ -733,7 +741,7 @@ This task loads compiled solidity contracts, permitting multiple nonidentical co
 Sample usage:
 ```scala
 scala> 1 + 1
-res51: Int = 2
+res50: Int = 2
 ```
 
 ### `xethLoadCompilationsOmitDups`
@@ -741,7 +749,7 @@ This task loads compiled solidity contracts, omitting contracts with multiple no
 Sample usage:
 ```scala
 scala> 1 + 1
-res52: Int = 2
+res51: Int = 2
 ```
 
 ### `xethLoadWalletV3`
@@ -749,7 +757,7 @@ This task loads a V3 wallet from [ethWalletsV3](#ethwalletsv3) for current sende
 Sample usage:
 ```scala
 scala> 1 + 1
-res53: Int = 2
+res52: Int = 2
 ```
 
 ### `xethLoadWalletV3For`
@@ -757,7 +765,7 @@ This task loads a V3 wallet from [ethWalletsV3](#ethwalletsv3).
 Sample usage:
 ```scala
 scala> 1 + 1
-res54: Int = 2
+res53: Int = 2
 ```
 
 ### `xethNamedAbiSource`
@@ -766,7 +774,7 @@ Each as `<stubname>.json`.
 Sample usage:
 ```scala
 scala> 1 + 1
-res55: Int = 2
+res54: Int = 2
 ```
 
 ### `xethNamedAbis`
@@ -774,7 +782,7 @@ This task loads any named ABIs from the [xethNamedAbiSource](#xethnamedabisource
 Sample usage:
 ```scala
 scala> 1 + 1
-res56: Int = 2
+res55: Int = 2
 ```
 
 ### `xethNextNonce`
@@ -782,7 +790,7 @@ This task finds the next nonce for the current sender.
 Sample usage:
 ```scala
 scala> 1 + 1
-res57: Int = 2
+res56: Int = 2
 ```
 
 ### `xethQueryRepositoryDatabase`
@@ -790,7 +798,7 @@ This task is primarily for debugging. It queries the internal repository databas
 Sample usage:
 ```scala
 scala> 1 + 1
-res58: Int = 2
+res57: Int = 2
 ```
 
 ### `xethTestingResourcesObjectName`
@@ -798,7 +806,7 @@ This setting defines the name of the Scala object that will be automatically gen
 Sample usage:
 ```scala
 scala> 1 + 1
-res59: Int = 2
+res58: Int = 2
 ```
 
 ### `xethTriggerDirtyAliasCache`
@@ -806,7 +814,7 @@ This task updates of the cache of aliases used for tab completions.
 Sample usage:
 ```scala
 scala> 1 + 1
-res60: Int = 2
+res59: Int = 2
 ```
 
 ### `xethTriggerDirtySolidityCompilerList`
@@ -814,7 +822,7 @@ This task updates the cache of available solidity compilers used for tab complet
 Sample usage:
 ```scala
 scala> 1 + 1
-res61: Int = 2
+res60: Int = 2
 ```
 
 ### `xethUpdateContractDatabase`
@@ -822,7 +830,7 @@ This task integrates newly compiled contracts into the contract database. Return
 Sample usage:
 ```scala
 scala> 1 + 1
-res62: Int = 2
+res61: Int = 2
 ```
 
 ### `xethUpdateRepositoryDatabase`
@@ -830,7 +838,7 @@ This task is primarily for development and debugging. It updates the internal re
 Sample usage:
 ```scala
 scala> 1 + 1
-res63: Int = 2
+res62: Int = 2
 ```
 
 ### `xethUpdateSessionSolidityCompilers`
@@ -838,7 +846,7 @@ This task finds and tests potential Solidity compilers to see which is available
 Sample usage:
 ```scala
 scala> 1 + 1
-res64: Int = 2
+res63: Int = 2
 ```
 
 ### `xethWalletV3Pbkdf2C`
@@ -846,7 +854,7 @@ This setting defines the value to use for parameter C when generating `pbkdf2` V
 Sample usage:
 ```scala
 scala> 1 + 1
-res65: Int = 2
+res64: Int = 2
 ```
 
 ### `xethWalletV3Pbkdf2DkLen`
@@ -854,7 +862,7 @@ This setting defines the derived key length parameter used when generating `pbkd
 Sample usage:
 ```scala
 scala> 1 + 1
-res66: Int = 2
+res65: Int = 2
 ```
 
 ### `xethWalletV3ScryptDkLen`
@@ -862,7 +870,7 @@ This setting defines the derived key length parameter used when generating Scryp
 Sample usage:
 ```scala
 scala> 1 + 1
-res67: Int = 2
+res66: Int = 2
 ```
 
 ### `xethWalletV3ScryptN`
@@ -870,7 +878,7 @@ This setting defines the value to use for parameter `N` when generating Scrypt V
 Sample usage:
 ```scala
 scala> 1 + 1
-res68: Int = 2
+res67: Int = 2
 ```
 
 ### `xethWalletV3ScryptP`
@@ -878,7 +886,7 @@ This setting defines the value to use for parameter `P` when generating Scrypt V
 Sample usage:
 ```scala
 scala> 1 + 1
-res69: Int = 2
+res68: Int = 2
 ```
 
 ### `xethWalletV3ScryptR`
@@ -886,5 +894,5 @@ This setting defines the value to use for parameter `R` when generating Scrypt V
 Sample usage:
 ```scala
 scala> 1 + 1
-res70: Int = 2
+res69: Int = 2
 ```
