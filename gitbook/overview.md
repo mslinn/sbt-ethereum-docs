@@ -10,6 +10,11 @@ There are three types of activities you can perform with the the family of proje
   3. Compile and run Scala programs that execute Solidity programs using functionality provided by `sbt-ethereum`.
      This is particularly useful when integrating Solidity into existing infrastructure.
 
+All projects based on `sbt-ethereum`, including `eth-command-line`, share a common database on the local machine,
+so they have equal access to Ethereum wallets and imported contract ABIs.
+When you deploy your smart contracts, their ABIs and other meta-information will be added to the local machine's database, 
+so a permanent record will exist of all the contracts you work.
+
 ## Prerequisites
   1. A Java 8 runtime environment must be installed.
     If your machine does not already have one installed, you can download a 
@@ -83,18 +88,24 @@ There are three types of activities you can perform with the the family of proje
      ```
      Remember to replace the hex string above with your own Ethereum address!
    
-## Using Infura's Ethereum nodes
+## Choosing an Ethereum Node
+`eth-command-line` and `sbt-ethereum` are preconfigured to interact with a public Ethereum node that we run at 
+`http://ethjsonrpc.mchange.com:8545/`. 
+When you are ready to run your own node and sync it to the blockchain, edit `build.sbt` in the `eth-command-line` and/or `sbt-ethereum` projects.
+No guarantees are made about how long our Ethereum node will be exposed for public use!
+But for now, come play.
+
 `eth-command-line` and `sbt-ethereum` can work with any Ethereum node.
 If you do not want to use our Ethereum node, and you do not want to go through the process of setting up your own Ethereum node, 
 you can an use any other node.
-For example, here is how to configure `eth-command-line` and/or `sbt-ethereum` to work with Infura's Ethereum nodes:
-
-  1. Obtain a token from [infura.io](https://infura.io) and store it in an environment variable called `INFURA_TOKEN`.
-     This token is referenced in `build.sbt`.
-     You might want to set the environment variable in `~/.bashrc`, `~/.profile` or `~/.bash_profile`.
-     ```
-     export INFURA_TOKEN="blahblahblah"
-     ```
+For example, to configure `eth-command-line` and/or `sbt-ethereum` to work with Infura's Ethereum nodes,
+obtain a token from [infura.io](https://infura.io) and store it in an environment variable called `INFURA_TOKEN`.
+This token is referenced in `build.sbt`.
+You might want to set the environment variable in `~/.bashrc`, `~/.profile` or `~/.bash_profile`.
+```
+export INFURA_TOKEN="blahblahblah"
+```
+The next time you start `eth-command-line` or `sbt-ethereum` they will notice the token and use it to connect with an Infura Ethereum node.
 
 ## Custom Projects
 The `sbt-ethereum-seed` project is a handy starting point for custom projects based on `sbt-ethereum`, 

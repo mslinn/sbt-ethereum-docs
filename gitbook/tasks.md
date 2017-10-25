@@ -32,7 +32,7 @@ Sample usage:
 [success] Total time: 0 s, completed Oct 24, 2017 5:04:07 PM
 ```
 
-### `ethAbiMemorize`
+### `ethAbiMemorize` 
 This task prompts for an ABI definition for a contract and inserts it into the `sbt-ethereum` database.
 Sample usage:
 ```sbtshell
@@ -42,6 +42,9 @@ Contract ABI: [{"name":"asdf","inputs":[{"name":"param","type":"uint256"}],"outp
 [info] ABI is now known for the contract at address 019e39e4c8c46034b1c0da2d26f99cc6a1ae941b
 [success] Total time: 29 s, completed Oct 24, 2017 4:58:02 PM
 ```
+
+Once you have imported a contract ABI you can call the smart contract's methods by using the `ethCallEphemeral` task.
+FIXME There is no task called `ethCallEphemeral`.
 
 ### `ethAliasDrop`
 This task drops an alias for an ethereum address from the `sbt-ethereum` repository database.
