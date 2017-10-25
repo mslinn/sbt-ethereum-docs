@@ -1,6 +1,8 @@
 # Summary
 
 * [Overview](gitbook/overview.md)
+  * [Getting Started](gitbook/overview.md#getting-started)
+  * [Introduction to Tasks and Settings](gitbook/overview.md#introduction-to-tasks-and-settings)
 * [Sample Session](gitbook/sample-session.md)
 * [SBT Tasks and Settings](gitbook/tasks.md)
   * [eth Tasks and Settings](gitbook/tasks.md#eth-tasks)

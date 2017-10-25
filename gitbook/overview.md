@@ -1,11 +1,13 @@
-# sbt-ethereum Overview
+# Overview
 
-There are three types of activities you can perform with `sbt-ethereum`:
+There are three types of activities you can perform with the the family of projects powered by `sbt-ethereum`:
 
-  1. Running ad-hoc, interactive SBT tasks, performed in the SBT REPL.
-     These tasks are provided by `sbt-ethereum`.
-  2. Defining and running SBT tasks that wrap the above `sbt-ethereum` SBT tasks into custom SBT tasks for your needs.
-  3. Compiling and running a program that executes Solidity programs using functionality provided by `sbt-ethereum`.
+  1. Use `eth-command-line` to interactively run ad-hoc commands.
+     These commands are actually SBT tasks and settings defined by `sbt-ethereum`, which you type into the SBT REPL.
+     You do not need to know SBT, or Scala, or even be a programmer, in order to use `eth-command-line`.
+  2. Define and run SBT tasks that wrap the `sbt-ethereum` SBT tasks into custom SBT tasks for your needs.
+  3. Compile and run Scala programs that execute Solidity programs using functionality provided by `sbt-ethereum`.
+     This is particularly useful when integrating Solidity into existing infrastructure.
 
 ## Getting Started
   1. Obtain a token from [infura.io](https://infura.io) and store it in an environment variable called `INFURA_TOKEN`.
@@ -14,16 +16,16 @@ There are three types of activities you can perform with `sbt-ethereum`:
      export INFURA_TOKEN="blahblahblah"
      ```
   2. Clone [sbt-ethereum-seed](https://github.com/mslinn/sbt-ethereum-seed):
-     ```angular2html
-     git clone git@github.com:mslinn/sbt-ethereum-seed.git
      ```
-  3. Move to the top-level directory of your copy of `sbt-ethereum-seed`:
+     git clone git@github.com:swaldman/eth-command-line.git
      ```
-     $ cd sbt-ethereum-seed
+  3. Move to the top-level directory of your copy of `eth-command-line`:
+     ```
+     $ cd eth-command-line
      ```
 
-## sbt-ethereum Tasks
-From the `sbt-ethereum-seed` directory, start SBT:
+## Introduction to Tasks and Settings
+From the `eth-command-line` or `sbt-ethereum-seed` directory, start SBT:
 ```
 $ sbt
 [info] Loading global plugins from /home/mslinn/.sbt/0.13/plugins

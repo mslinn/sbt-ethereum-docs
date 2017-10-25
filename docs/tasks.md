@@ -438,9 +438,9 @@ Instead of `wei`, you can use denominations `ether`, `finney`, or `szabo`.
 This setting defines the address from which transactions will be sent.
 The value will be stable throughout your interactive session (unless you reset it with set ethSender as above). 
 You will be prompted for the passphrase only once. 
-Be careful, as commands to send ether or deploy contracts will execute without further ceremony!
+Caution: all subsequent command that send ether or deploy contracts will execute without further passphrase prompts.
 
-To set `ethSender` via the SBT command like, type:
+To set `ethSender` via the SBT command line, type:
 
     > set ethSender := "0x465e79b940bc2157e4259ff6b2d92f454497f1e4"
 
