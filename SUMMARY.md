@@ -2,8 +2,8 @@
 
 * [Overview](gitbook/overview.md)
 * [Sample Session](gitbook/sample-session.md)
-* [SBT Tasks](gitbook/tasks.md)
-  * [eth Tasks](gitbook/tasks.md#eth-tasks)
+* [SBT Tasks and Settings](gitbook/tasks.md)
+  * [eth Tasks and Settings](gitbook/tasks.md#eth-tasks)
     * [ethAbiForget](gitbook/tasks.md#ethabiforget)
     * [ethAbiList](gitbook/tasks.md#ethabilist)
     * [ethAbiMemorize](gitbook/tasks.md#ethabimemorize)
@@ -52,8 +52,7 @@
     * [ethTestrpcLocalRestart](gitbook/tasks.md#ethtestrpclocalrestart)
     * [ethTestrpcLocalStart](gitbook/tasks.md#ethtestrpclocalstart)
     * [ethTestrpcLocalStop](gitbook/tasks.md#ethtestrpclocalstop)
-    
-  * [xeth SBT Tasks](gitbook/tasks.md#xeth-sbt-tasks)
+  * [xeth Tasks and Settings](gitbook/tasks.md#xeth-sbt-tasks)
     * [xethDefaultGasPrice](gitbook/tasks.md#xethdefaultgasprice)
     * [xethEphemeralBlockchains](gitbook/tasks.md#xethephemeralblockchains)
     * [xethFindCacheAliasesIfAvailable](gitbook/tasks.md#xethfindcachealiasesifavailable)
