@@ -14,3 +14,6 @@ resolvers ++= Seq(
   "Sonatype releases"  at "https://oss.sonatype.org/service/local/staging/deploy/maven2",
   "Sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 )
+
+
+
