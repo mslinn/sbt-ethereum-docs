@@ -169,4 +169,4 @@ xethWalletV3Pbkdf2DkLen                    xethWalletV3ScryptDkLen              
 > xeth
 ```
 
-All of the SBT tasks are [described individually](tasks.md).
+All of the SBT tasks are [described individually](tasks.md#sbt-ethereum-sbt-tasks-and-settings).

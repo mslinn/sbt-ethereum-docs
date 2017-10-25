@@ -17,7 +17,7 @@ You can invoke it from a bash shell like this:
 
     $ git add -A && git commit -m "Your comment here" && sbt commitAndPublishGitbook
 
-If you are lazy, and/or do not feel there is a need for a helpful commit comment, 
+If you are lazy or do not feel there is a need for a helpful commit comment, 
 just run the SBT task and it will commit with a single dash in place of a comment:
 
     $ sbt commitAndPublishGitbook

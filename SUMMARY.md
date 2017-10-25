@@ -7,7 +7,7 @@
   * [Custom Projects](gitbook/overview.md#custom-projects)
   * [Introduction to Tasks and Settings](gitbook/overview.md#introduction-to-tasks-and-settings)
 * [Sample Session](gitbook/sample-session.md)
-* [SBT Tasks and Settings](gitbook/tasks.md)
+* [SBT Tasks and Settings](gitbook/tasks.md#sbt-ethereum-sbt-tasks-and-settings)
   * [eth Tasks and Settings](gitbook/tasks.md#eth-tasks)
     * [ethAbiForget](gitbook/tasks.md#ethabiforget)
     * [ethAbiList](gitbook/tasks.md#ethabilist)
