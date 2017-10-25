@@ -26,7 +26,7 @@ There are three types of activities you can perform with the the family of proje
          $ git clone git@github.com:swaldman/eth-command-line.git
       
       b. If you [download](https://github.com/swaldman/eth-command-line/archive/master.zip) the zip file 
-         containing the `eth-command-line` project, you need to make the downloaded `eth-command-line` script executable by typing:
+        containing the `eth-command-line` project, you need to make the downloaded `eth-command-line` script executable by typing:
          
          $ mkdir eth-command-line
          $ cd eth-command-line
