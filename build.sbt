@@ -20,12 +20,9 @@ resolvers ++= Seq(
   "Sonhatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 )
 
-libraryDependencies ++= Seq(
-  "com.mchange" %% "consuela" % "0.0.3-SNAPSHOT"
-)
+val commitAndPublishGitbook = taskKey[Unit]("Rebuilds the docs, commits the git repository, and pushes to publish the updated gitbook")
 
-// You must define an environment variable called INFURA_TOKEN in order for this project to work
-ethJsonRpcUrl := s"http://mainnet.infura.io/${ sys.env("INFURA_TOKEN") }"
-//ethJsonRpcUrl := "http://192.168.10.49:8545"
-
-ethPackageScalaStubs := "eth.anyone.contract"
+commitAndPublishGitbook := {
+  val dependOnTut = tut.value
+  "git commit -am -" #&& "git push" !
+}
