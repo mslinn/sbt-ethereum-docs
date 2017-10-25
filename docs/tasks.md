@@ -417,11 +417,22 @@ Sample usage:
 ```
 
 ### `ethSendEther`
-This task sends ether from the current sender to a specified account in the format `ethSendEther <to-address-as-hex> <amount> <wei|szabo|finney|ether>`.
-Sample usage:
-```tut
-1 + 1
-```
+This task sends ether from the current sender to a specified account in the following format:
+ 
+    ethSendEther <to-address-as-hex> <amount> <wei|szabo|finney|ether>
+
+To send ether:
+
+    > ethSendEther 0xae79b77e31387a3b2409b70c27cebc7220101026 1500 wei
+
+This will send 1500 wei to address `0xae79b77e31387a3b2409b70c27cebc7220101026`. 
+You will be asked for a credential, which can be the passphrase to a V3 ethereum wallet or can be a hex private key.
+The wallet should be located in `geth`'s standard keystore directory.
+Input will be masked, when you input your credential.
+
+You can use the `<tab>` key for suggestions and completions, as always.
+
+Instead of `wei`, you can use denominations `ether`, `finney`, or `szabo`.
 
 ### `ethSender`
 This setting defines the address from which transactions will be sent.
