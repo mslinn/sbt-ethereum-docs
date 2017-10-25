@@ -81,7 +81,7 @@ There are three types of activities you can perform with the the family of proje
      eth ~> set ethAddress := "0xc33071ead8753b04e0ee108cc168f2b22f93525d"
   
      ```
-     (Do not forget to replace the hex string above with your own Ethereum address!)
+     Remember to replace the hex string above with your own Ethereum address!
    
 ## Using Infura's Ethereum nodes
 `eth-command-line` and `sbt-ethereum` can work with any Ethereum node.
@@ -91,6 +91,7 @@ For example, here is how to configure `eth-command-line` and/or `sbt-ethereum` t
 
   1. Obtain a token from [infura.io](https://infura.io) and store it in an environment variable called `INFURA_TOKEN`.
      This token is referenced in `build.sbt`.
+     You might want to set the environment variable in `~/.bashrc`, `~/.profile` or `~/.bash_profile`.
      ```
      export INFURA_TOKEN="blahblahblah"
      ```
