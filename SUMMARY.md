@@ -1,6 +1,7 @@
 # Summary
 
 * [Overview](gitbook/overview.md)
+* [Sample Session](gitbook/sample-session.md)
 * [SBT Tasks](gitbook/tasks.md)
   * [eth Tasks](gitbook/tasks.md#eth-tasks)
     * [ethAbiForget](gitbook/tasks.md#ethabiforget)
@@ -93,5 +94,3 @@
     * [xethWalletV3ScryptN](gitbook/tasks.md#xethwalletv3scryptn)
     * [xethWalletV3ScryptP](gitbook/tasks.md#xethwalletv3scryptp)
     * [xethWalletV3ScryptR](gitbook/tasks.md#xethwalletv3scryptr)
-
-* [Sample Session](gitbook/sample-session.md)
