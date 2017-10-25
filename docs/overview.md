@@ -15,7 +15,8 @@ There are three types of activities you can perform with the the family of proje
     If your machine does not already have one installed, you can download a 
     [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
     or a full [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
-  2. Optional: [git](https://git-scm.com/) client.
+  2. [SBT](http://www.scala-sbt.org/download.html)
+  3. Optional: [git](https://git-scm.com/) client.
      This documentation assumes the standard `git` command-line client, but you can use a gui-based `git` client if you prefer.
 
 ## Quick Start
@@ -26,33 +27,33 @@ There are three types of activities you can perform with the the family of proje
          $ git clone git@github.com:swaldman/eth-command-line.git
       
       b. If you [download](https://github.com/swaldman/eth-command-line/archive/master.zip) the zip file 
-        containing the `eth-command-line` project, you need to make the downloaded `eth-command-line` script executable by typing:
+        containing the `eth-command-line` project, extract it and rename it to `eth-command-line` :
          
-         $ mkdir eth-command-line
-         $ cd eth-command-line
-         $ wget -O eth-command-line https://github.com/swaldman/eth-command-line/archive/master.zip
+         $ wget -O eth-command-line.zip https://github.com/swaldman/eth-command-line/archive/master.zip
          $ unzip eth-command-line
-         $ cd chmod a+x eth-command-line
+         $ mv eth-command-line-master eth-command-line
          
   2. Move to the `eth-command-line` directory that was just created.
      ```
      $ cd eth-command-line
      ```
-  3. Execute the `eth-command-line` shell script . 
-     The first time you do this, *many* dependencies be downloaded.
-     At a minimum, you will see the following output:
+  3. Execute `sbt`. 
+     The first time you do this, many dependencies be downloaded.
+     At a minimum you will see the following output:
      ```
-     $ eth-command-line
+     $ sbt
      [info] Loading global plugins from /home/mslinn/.sbt/0.13/plugins
      [info] Loading project definition from /mnt/_/work/eth-command-line/project
      13:06:15.449 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
      [info] Set current project to eth-command-line (in build file:/mnt/_/work/eth-command-line/)
      13:06:17.553 [pool-8-thread-1] INFO  org.eclipse.jetty.util.log - Logging initialized @7610ms to org.eclipse.jetty.util.log.Slf4jLog
      [info] Updating available solidity compiler set.
+     eth ~>
      ```
-  4. At the `eth ~> ` prompt, begin typing ethereum-related commands. 
-     To see a list of all `eth-command-line` tasks and settings, type `eth<tab>` and `xeth<tab>`.
-  5. Before you can run tasks that require the payment of Ether, such as sending ether 
+  4. When you see the `eth ~> ` prompt you can begin typing `eth-command-line`'s Ethereum-related commands 
+     (these are actually known as SBT *tasks* and *settings*).
+     To see a list of all `eth-command-line`'s tasks and settings, type `eth<tab>` and `xeth<tab>`.
+  5. Before you can run tasks that require the payment of Ether, such as sending Ether 
      ([ethSendEther](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethsendether)) or
      invoking state-changing smart-contract tasks 
      ([ethInvoke](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethinvoke)), 
