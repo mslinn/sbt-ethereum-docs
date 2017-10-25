@@ -25,6 +25,8 @@ val commitAndPublishGitbook =
 commitAndPublishGitbook := {
   val dependOnTut: Seq[(File, String)] = tut.value
   "git commit -am -".!
-  println("git push".!!)
+
+  // See https://stackoverflow.com/a/20922141/553865
+  println("git push origin HEAD".!!) // push the current branch to the same name on the remote
 }
 
