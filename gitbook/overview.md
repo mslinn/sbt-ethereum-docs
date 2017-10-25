@@ -16,7 +16,7 @@ When you deploy your smart contracts, their ABIs and other meta-information will
 so a permanent record will exist of all the contracts you work.
 
 ## Prerequisites
-  1. A Java 8 runtime environment must be installed.
+  1. A Java 8 runtime environment (we have not tested Java 9 yet).
     If your machine does not already have one installed, you can download a 
     [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
     or a full [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
@@ -76,7 +76,7 @@ so a permanent record will exist of all the contracts you work.
   
      ```
      You can also import any existing `geth` wallets into the `sbt-ethereum` repository directory.
-     HOW?
+     (TODO HOW?)
   
      *Be sure to back up your `sbt-ethereum` repository directory to avoid losing your wallets
      and accounts!* (TODO HOW?)
@@ -91,13 +91,17 @@ so a permanent record will exist of all the contracts you work.
 ## Choosing an Ethereum Node
 `eth-command-line` and `sbt-ethereum` are preconfigured to interact with a public Ethereum node that we run at 
 `http://ethjsonrpc.mchange.com:8545/`. 
-When you are ready to run your own node and sync it to the blockchain, edit `build.sbt` in the `eth-command-line` and/or `sbt-ethereum` projects.
-No guarantees are made about how long our Ethereum node will be exposed for public use!
-But for now, come play.
+When you are ready to run your own node and sync it to the blockchain, edit the following line in `build.sbt` in the `eth-command-line` and/or `sbt-ethereum` projects.
+
+    ethJsonRpcUrl := "http://ethjsonrpc.mchange.com:8545/"
+    
+No guarantees are made about how long our Ethereum node will be exposed for public use,
+but for now, you are welcome to connect to our Ethereum node.
 
 `eth-command-line` and `sbt-ethereum` can work with any Ethereum node.
 If you do not want to use our Ethereum node, and you do not want to go through the process of setting up your own Ethereum node, 
-you can an use any other node.
+you can use any other Ethereum node.
+
 For example, to configure `eth-command-line` and/or `sbt-ethereum` to work with Infura's Ethereum nodes,
 obtain a token from [infura.io](https://infura.io) and store it in an environment variable called `INFURA_TOKEN`.
 This token is referenced in `build.sbt`.
@@ -105,11 +109,14 @@ You might want to set the environment variable in `~/.bashrc`, `~/.profile` or `
 ```
 export INFURA_TOKEN="blahblahblah"
 ```
-The next time you start `eth-command-line` or `sbt-ethereum` they will notice the token and use it to connect with an Infura Ethereum node.
+The next time you start `eth-command-line` or `sbt-ethereum` they will notice the token and automatically use it to 
+connect with an Infura Ethereum node.
 
 ## Custom Projects
 The `sbt-ethereum-seed` project is a handy starting point for custom projects based on `sbt-ethereum`, 
-and it also supports all of the functionality of `eth-command-line`:
+and it also supports all of the functionality of `eth-command-line`.
+To create a custom project:
+
   1. Clone [sbt-ethereum-seed](https://github.com/mslinn/sbt-ethereum-seed):
      ```
      git clone git@github.com:swaldman/eth-command-line.git
