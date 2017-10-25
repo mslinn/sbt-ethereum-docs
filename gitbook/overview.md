@@ -11,75 +11,76 @@ There are three types of activities you can perform with the the family of proje
      This is particularly useful when integrating Solidity into existing infrastructure.
 
 ## Prerequisites
-1. A Java 8 runtime environment must be installed.
-  If your machine does not already have one installed, you can download a 
-  [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
-  or a full [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
-2. Optional: [git](https://git-scm.com/) client.
-   This documentation assumes the standard `git` command-line client, but you can use a gui-based `git` client if you prefer.
+  1. A Java 8 runtime environment must be installed.
+    If your machine does not already have one installed, you can download a 
+    [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
+    or a full [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+  2. Optional: [git](https://git-scm.com/) client.
+     This documentation assumes the standard `git` command-line client, but you can use a gui-based `git` client if you prefer.
 
 ## Quick Start
-1. You can use `git` or download a zip file to obtain `eth-command-line`.
-   a. To use the `git` command line, type:
+  1. You can use `git` or download a zip file to obtain `eth-command-line`.
+ 
+      a. To use the `git` command line, type:
+      
+         $ git clone git@github.com:swaldman/eth-command-line.git
+      
+      b. If you [download](https://github.com/swaldman/eth-command-line/archive/master.zip) the zip file 
+         containing the `eth-command-line` project, you need to make the downloaded `eth-command-line` script executable by typing:
+         
+         $ mkdir eth-command-line
+         $ cd eth-command-line
+         $ wget -O eth-command-line https://github.com/swaldman/eth-command-line/archive/master.zip
+         $ unzip eth-command-line
+         $ cd chmod a+x eth-command-line
+         
+  2. Move to the `eth-command-line` directory that was just created.
      ```
-     $ git clone git@github.com:swaldman/eth-command-line.git
-     ```
-   b. If you [download](https://github.com/swaldman/eth-command-line/archive/master.zip) a zip file 
-     containing the `eth-command-line` project, you need to make the downloaded `eth-command-line` script executable by typing:
-     ```
-     $ mkdir eth-command-line
      $ cd eth-command-line
-     $ wget -O eth-command-line https://github.com/swaldman/eth-command-line/archive/master.zip
-     $ unzip eth-command-line
-     $ cd chmod a+x eth-command-line
      ```
-2. Move to the `eth-command-line` directory that was just created.
-   ```
-   $ cd eth-command-line
-   ```
-3. Execute the `eth-command-line` shell script . 
-   The first time you do this, *many* dependencies be downloaded.
-   At a minimum, you will see the following output:
-   ```
-   $ eth-command-line
-   [info] Loading global plugins from /home/mslinn/.sbt/0.13/plugins
-   [info] Loading project definition from /mnt/_/work/eth-command-line/project
-   13:06:15.449 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
-   [info] Set current project to eth-command-line (in build file:/mnt/_/work/eth-command-line/)
-   13:06:17.553 [pool-8-thread-1] INFO  org.eclipse.jetty.util.log - Logging initialized @7610ms to org.eclipse.jetty.util.log.Slf4jLog
-   [info] Updating available solidity compiler set.
-   ```
-4. At the `eth ~> ` prompt, begin typing ethereum-related commands. 
-   To see a list of all `eth-command-line` tasks and settings, type `eth<tab>` and `xeth<tab>`.
-5. Before you can run tasks that require the payment of Ether, such as sending ether 
-   ([ethSendEther](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethsendether)) or
-   invoking state-changing smart-contract tasks 
-   ([ethInvoke](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethinvoke)), 
-   you will need to first define the ethereum address from which the operation will originate. 
-   You can create a new address using the
-   [ethKeystoreCreateWalletV3](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethkeystorecreatewalletv3) 
-   task.
-   ```
-   eth ~> ethKeystoreCreateWalletV3
-   [info] Generated keypair for address '0xc33071ead8753b04e0ee108cc168f2b22f93525d'
-   [info] Generating V3 wallet, alogorithm=scrypt, n=262144, r=8, p=1, dklen=32
-   Enter passphrase for new wallet: *******************
-   Please retype to confirm: *******************
-   [success] Total time: 31 s, completed Dec 30, 2016 7:53:11 AM
-
-   ```
-   You can also import any existing `geth` wallets into the `sbt-ethereum` repository directory.
-   HOW?
-
-   *Be sure to back up your `sbt-ethereum` repository directory to avoid losing your wallets
-   and accounts!* (TODO HOW?)
-6. Once you have a generated or imported a wallet and transferred some Ether to it,
-   set `ethAddress` to `eth-command-line` to use that account for fund transfers or method invocations as shown in this example:
-   ```
-   eth ~> set ethAddress := "0xc33071ead8753b04e0ee108cc168f2b22f93525d"
-
-   ```
-   (Do not forget to replace the hex string above with your own Ethereum address!)
+  3. Execute the `eth-command-line` shell script . 
+     The first time you do this, *many* dependencies be downloaded.
+     At a minimum, you will see the following output:
+     ```
+     $ eth-command-line
+     [info] Loading global plugins from /home/mslinn/.sbt/0.13/plugins
+     [info] Loading project definition from /mnt/_/work/eth-command-line/project
+     13:06:15.449 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+     [info] Set current project to eth-command-line (in build file:/mnt/_/work/eth-command-line/)
+     13:06:17.553 [pool-8-thread-1] INFO  org.eclipse.jetty.util.log - Logging initialized @7610ms to org.eclipse.jetty.util.log.Slf4jLog
+     [info] Updating available solidity compiler set.
+     ```
+  4. At the `eth ~> ` prompt, begin typing ethereum-related commands. 
+     To see a list of all `eth-command-line` tasks and settings, type `eth<tab>` and `xeth<tab>`.
+  5. Before you can run tasks that require the payment of Ether, such as sending ether 
+     ([ethSendEther](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethsendether)) or
+     invoking state-changing smart-contract tasks 
+     ([ethInvoke](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethinvoke)), 
+     you will need to first define the ethereum address from which the operation will originate. 
+     You can create a new address using the
+     [ethKeystoreCreateWalletV3](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethkeystorecreatewalletv3) 
+     task.
+     ```
+     eth ~> ethKeystoreCreateWalletV3
+     [info] Generated keypair for address '0xc33071ead8753b04e0ee108cc168f2b22f93525d'
+     [info] Generating V3 wallet, alogorithm=scrypt, n=262144, r=8, p=1, dklen=32
+     Enter passphrase for new wallet: *******************
+     Please retype to confirm: *******************
+     [success] Total time: 31 s, completed Dec 30, 2016 7:53:11 AM
+  
+     ```
+     You can also import any existing `geth` wallets into the `sbt-ethereum` repository directory.
+     HOW?
+  
+     *Be sure to back up your `sbt-ethereum` repository directory to avoid losing your wallets
+     and accounts!* (TODO HOW?)
+  6. Once you have a generated or imported a wallet and transferred some Ether to it,
+     set `ethAddress` to `eth-command-line` to use that account for fund transfers or method invocations as shown in this example:
+     ```
+     eth ~> set ethAddress := "0xc33071ead8753b04e0ee108cc168f2b22f93525d"
+  
+     ```
+     (Do not forget to replace the hex string above with your own Ethereum address!)
    
 ## Using Infura's Ethereum nodes
 `eth-command-line` and `sbt-ethereum` can work with any Ethereum node.
