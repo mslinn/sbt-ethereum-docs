@@ -1,5 +1,6 @@
 // Tut is configured to read documentation source (markdown and html) from the docs/ directory, and to
-// write output (for gitbook) to the gitbook/ directory.
+// write output (for gitbook) to the gitbook/ directory, which will automatically be created if required.
+// DO NOT MANUALLY PUT ANYTHING IN THE gitbook/ DIRECTORY.
 
 name := "sbt-ethereum-docs"
 scalaVersion := "2.12.4"
@@ -17,13 +18,13 @@ resolvers ++= Seq(
   "Sonhatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 )
 
-val commitAndPublishGitbook = taskKey[Unit]("Rebuilds the docs, commits the git repository, and pushes to publish the updated gitbook")
+val commitAndPublishGitbook =
+  taskKey[Unit]("Rebuilds the docs, commits the git repository, and pushes to publish the updated gitbook")
 
-// a minor annoyance:
-// this task won't push if there's nothing to commit,
-// because 'git commit' yield a nonzero exit code in that case.
+// This task tries to push even if there's nothing to commit
 commitAndPublishGitbook := {
-  val dependOnTut = tut.value
-  "git commit -am -" #&& "git push" !
+  val dependOnTut: Seq[(File, String)] = tut.value
+  "git commit -am -".!
+  "git push".!
 }
 
