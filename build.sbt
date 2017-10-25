@@ -21,7 +21,7 @@ val commitAndPublishGitbook = taskKey[Unit]("Rebuilds the docs, commits the git 
 
 // a minor annoyance:
 // this task won't push if there's nothing to commit,
-// because 'git commit' yield a nonzero exit code in that case.
+// because 'git commit' yields a nonzero exit code in that case.
 commitAndPublishGitbook := {
   val dependOnTut = tut.value
   "git commit -am -" #&& "git push" !
