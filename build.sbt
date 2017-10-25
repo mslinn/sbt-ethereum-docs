@@ -9,24 +9,8 @@ enablePlugins(TutPlugin)
 tutTargetDirectory := new File("gitbook")
 tutSourceDirectory := new File("docs")
 
-
-//// The remainder of this file enables and configures sbt-ethereum
-
 resolvers ++= Seq(
-  "Typesafe releases"   at "http://repo.typesafe.com/typesafe/releases/",
-  "Sonatype releases"   at "https://oss.sonatype.org/service/local/staging/deploy/maven2",
-  "Sonhatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+  "Typesafe releases"  at "http://repo.typesafe.com/typesafe/releases/",
+  "Sonatype releases"  at "https://oss.sonatype.org/service/local/staging/deploy/maven2",
+  "Sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 )
-
-val commitAndPublishGitbook =
-  taskKey[Unit]("Rebuilds the docs, commits the git repository, and pushes to publish the updated gitbook")
-
-// This task tries to push even if there's nothing to commit
-commitAndPublishGitbook := {
-  val dependOnTut: Seq[(File, String)] = tut.value
-  "git commit -am -".!
-
-  // See https://stackoverflow.com/a/20922141/553865
-  println("git push origin HEAD".!!) // push the current branch to the same name on the remote
-}
-
