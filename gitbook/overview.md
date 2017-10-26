@@ -112,7 +112,10 @@ they will notice the token and automatically use it to connect with an Infura Et
 `eth-command-line` / `sbt-ethereum` can work with any Ethereum node.
 If no environment variable called `ETH_INFURA_TOKEN` is defined, the `eth-command-line` build configuration checks for an environment variable called `ETH_DEFAULT_NODE`.
 If it is defined, its value is used verbatim to define the Ethereum node to connect to.
-When you are ready to run your own node and sync it to the blockchain, you should store your node's URL in `ETH_DEFAULT_NODE`.
+When you are ready to run your own node and sync it to the blockchain, 
+you should store your node's URL in `ETH_DEFAULT_NODE`, like this:
+
+    export ETH_DEFAULT_NODE="http://mynode.domain.com:8545/"
 
 ### Using the Default Ethereum Node
 If neither the environment variable called `ETH_INFURA_TOKEN` or the environment variable called `ETH_DEFAULT_NODE` are defined, the default Ethereum node is used:
