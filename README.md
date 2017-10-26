@@ -11,6 +11,11 @@
   * [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) SBT Plugin
   * [sbt-ethereum-seed](https://github.com/mslinn/sbt-ethereum-seed) Template for projects based on sbt-ethereum
 
+TODO `sbt-ethereum-seed` is identical to `eth-command-line`.
+Perhaps we should delete the seed project and explain that `eth-command-line` is also the seed.
+No point maintaining two identical projects.
+Agreed?
+
 ## Documentation Authors
 This project has a custom SBT task for publishing called `commitAndPublishGitbook`.
 You can invoke it from a bash shell like this:

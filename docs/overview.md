@@ -103,11 +103,11 @@ If you do not want to use our Ethereum node, and you do not want to go through t
 you can use any other Ethereum node.
 
 For example, to configure `eth-command-line` and/or `sbt-ethereum` to work with Infura's Ethereum nodes,
-obtain a token from [infura.io](https://infura.io) and store it in an environment variable called `INFURA_TOKEN`.
+obtain a token from [infura.io](https://infura.io) and store it in an environment variable called `ETH_INFURA_TOKEN`.
 This token is referenced in `build.sbt`.
 You might want to set the environment variable in `~/.bashrc`, `~/.profile` or `~/.bash_profile`.
 ```
-export INFURA_TOKEN="blahblahblah"
+export ETH_INFURA_TOKEN="blahblahblah"
 ```
 The next time you start `eth-command-line` or `sbt-ethereum` they will notice the token and automatically use it to 
 connect with an Infura Ethereum node.
