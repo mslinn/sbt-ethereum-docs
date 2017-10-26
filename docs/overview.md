@@ -7,13 +7,15 @@ There are three types of activities you can perform with the the family of proje
      You do not need to know SBT, or Scala, or even be a programmer, in order to use `eth-command-line` effectively.
      However, Scala programmers who understand SBT will be able to do more than those who do not.
   2. Define and run SBT tasks that wrap the `sbt-ethereum` SBT tasks into custom SBT tasks for your needs.
+     The easiest way to do this is to customize the `eth-command-line` project.
   3. Compile and run Scala programs that execute Solidity programs using functionality provided by `sbt-ethereum`.
      This is particularly useful when integrating Solidity into existing infrastructure.
+     Again, the easiest way to do this is to customize the `eth-command-line` project.
 
 All projects based on `sbt-ethereum`, including `eth-command-line`, share a common database on the local machine,
-so they have equal access to Ethereum wallets and imported contract ABIs.
-When you deploy your smart contracts, their ABIs and other meta-information will be added to the local machine's database, 
-so a permanent record will exist of all the contracts you work.
+so they all have equal access to Ethereum wallets and imported contract ABIs.
+When you deploy your smart contracts using `sbt-ethereum`, their ABIs and other meta-information will be added to the local machine's database, 
+and a permanent local record will exist of all the contracts you work.
 
 ## Prerequisites
   1. A Java 8 runtime environment (we have not tested Java 9 yet).
