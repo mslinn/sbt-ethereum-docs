@@ -11,7 +11,7 @@ There are three types of activities you can perform with the the family of proje
      the same project. This is particularly useful when integrating ethereum applications into existing infrastructure.
 
 All projects based on `sbt-ethereum`, including `eth-command-line`, share a common database on the local machine,
-so they all have equal access to the Ethereum wallets you creatre and the contract ABIs you define or import.
+so they all have equal access to the Ethereum wallets you create and the contract ABIs you define or import.
 When you deploy your smart contracts using `sbt-ethereum`, their ABIs and other meta-information will be added to the local machine's database, 
 and a permanent local record will exist of all the contracts you work.
 
@@ -48,8 +48,8 @@ and a permanent local record will exist of all the contracts you work.
      which complains a lot. Maybe it should to go to digital boot camp in order to improve its attitude.
      ```
      $ ./eth-command-line 
-     [info] Loading global plugins from /Users/swaldman/.sbt/0.13/plugins
-     [info] Loading project definition from /Users/swaldman/Dropbox/BaseFolders/development-why/gitproj/eth-command-line/project
+     [info] Loading global plugins from /home/smiley/.sbt/0.13/plugins
+     [info] Loading project definition from /home/smiley/eth-command-line/project
      23:28:14.283 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
      [info] Set current project to eth-command-line (in build file:/home/smiley/eth-command-line/)
      23:28:16.775 [pool-8-thread-1] INFO  org.eclipse.jetty.util.log - Logging initialized @6904ms to org.eclipse.jetty.util.log.Slf4jLog
@@ -158,9 +158,9 @@ this directory.
 If you wish to integrate new or already-deployed smart contracts with Scala applications, use
 ```
 $ sbt new swaldman/solidity-scala-seed.g8
-[info] Loading global plugins from /Users/swaldman/.sbt/0.13/plugins
-[info] Loading project definition from /Users/swaldman/tmp/project
-[info] Set current project to tmp (in build file:/Users/swaldman/tmp/)
+[info] Loading global plugins from /home/smiley/.sbt/0.13/plugins
+[info] Loading project definition from /home/smiley/tmp/project
+[info] Set current project to tmp (in build file:/home/smiley/tmp/)
 
 A mixed solidity / scala project for sbt-ethereum 
 
