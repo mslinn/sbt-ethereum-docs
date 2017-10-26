@@ -4,18 +4,12 @@
 [sbt-ethereum](https://github.com/swaldman/sbt-ethereum).
 
 ## Related Projects
-  * [eth-command-line](https://github.com/swaldman/eth-command-line) Ethereum command line client built from `sbt-ethereum`
-  * [eth-fortune](https://github.com/swaldman/eth-fortune) Sample Solidity app that uses `sbt-ethereum`
-  * [fatfinger](https://github.com/swaldman/fatfinger) TODO Is this relevant? If not, delete this line, otherwise, make this into a real comment
-  * [jsonrpc-client](https://github.com/swaldman/jsonrpc-client) TODO Is this relevant? If not, delete this line, otherwise, make this into a real comment
   * [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) SBT Plugin
   * [sbt-ethereum-docs](https://github.com/mslinn/sbt-ethereum-docs) The documentation you are reading is produced from this project
+  * [eth-command-line](https://github.com/swaldman/eth-command-line) Ethereum command line client built from `sbt-ethereum`
   * [sbt-ethereum-seed](https://github.com/mslinn/sbt-ethereum-seed) Template for projects based on sbt-ethereum
-
-TODO `sbt-ethereum-seed` is identical to `eth-command-line`.
-Perhaps we should delete the seed project and explain that `eth-command-line` is also the seed.
-No point maintaining two identical projects.
-Agreed?
+  * [consuela](https://github.com/swaldman/sbt-ethereum) Scala library of ethereum and crypto-ish tools upon which `sbt-ethereum` is built
+  * [eth-fortune](https://github.com/swaldman/eth-fortune) Sample Solidity app that uses `sbt-ethereum`
 
 ## Documentation Authors
 This project has a custom SBT task for publishing called `commitAndPublishGitbook`.
