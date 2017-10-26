@@ -2,6 +2,11 @@
 The following SBT tasks and settings are provided by `sbt-ethereum`.
 Some require configuration, others do not.
 
+Whenever SBT REPL output is shown below, only a short prompt is shown (`>`).
+`eth-command-line`'s default prompt actually looks something like this:
+
+    eth on master in eth-command-line> 
+
 ## `eth` Tasks and Settings
 
 ### `ethAbiForget`
