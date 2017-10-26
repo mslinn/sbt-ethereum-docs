@@ -118,9 +118,8 @@ you should store your node's URL in `ETH_DEFAULT_NODE`, like this:
     export ETH_DEFAULT_NODE="http://mynode.domain.com:8545/"
 
 ### Using the Default Ethereum Node
-If neither the environment variable called `ETH_INFURA_TOKEN` or the environment variable called `ETH_DEFAULT_NODE` are defined, the default Ethereum node is used:
-
-    http://ethjsonrpc.mchange.com:8545/
+If neither the environment variable called `ETH_INFURA_TOKEN` nor the environment variable called `ETH_DEFAULT_NODE` are defined, 
+the default Ethereum node is used, `http://ethjsonrpc.mchange.com:8545/`.
     
 ## Custom Projects
 The `sbt-ethereum-seed` project is a handy starting point for custom projects based on `sbt-ethereum`, 
