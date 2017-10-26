@@ -9,6 +9,7 @@
   * [fatfinger](https://github.com/swaldman/fatfinger) TODO Is this relevant? If not, delete this line, otherwise, make this into a real comment
   * [jsonrpc-client](https://github.com/swaldman/jsonrpc-client) TODO Is this relevant? If not, delete this line, otherwise, make this into a real comment
   * [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) SBT Plugin
+  * [sbt-ethereum-docs](https://github.com/mslinn/sbt-ethereum-docs) The documentation you are reading is produced from this project
   * [sbt-ethereum-seed](https://github.com/mslinn/sbt-ethereum-seed) Template for projects based on sbt-ethereum
 
 TODO `sbt-ethereum-seed` is identical to `eth-command-line`.
