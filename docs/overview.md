@@ -55,9 +55,9 @@ and a permanent local record will exist of all the contracts you work.
      [info] Set current project to eth-command-line (in build file:/mnt/_/work/eth-command-line/)
      13:06:17.553 [pool-8-thread-1] INFO  org.eclipse.jetty.util.log - Logging initialized @7610ms to org.eclipse.jetty.util.log.Slf4jLog
      [info] Updating available solidity compiler set.
-     eth ~>
+     eth on master in eth-command-line> 
      ```
-  4. When you see the `eth ~> ` prompt you can begin typing `eth-command-line`'s Ethereum-related commands 
+  4. When you see the `eth-command-line` prompt (`eth on master in eth-command-line> `) you can begin typing `eth-command-line`'s Ethereum-related commands 
      (these are actually known as SBT *tasks* and *settings*).
      To see a list of all `eth-command-line`'s tasks and settings, type `eth<tab>` and `xeth<tab>`.
   5. Before you can run tasks that require the payment of Ether, such as sending Ether 
@@ -69,7 +69,7 @@ and a permanent local record will exist of all the contracts you work.
      [ethKeystoreCreateWalletV3](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethkeystorecreatewalletv3) 
      task.
      ```
-     eth ~> ethKeystoreCreateWalletV3
+     eth on master in eth-command-line> ethKeystoreCreateWalletV3
      [info] Generated keypair for address '0xc33071ead8753b04e0ee108cc168f2b22f93525d'
      [info] Generating V3 wallet, alogorithm=scrypt, n=262144, r=8, p=1, dklen=32
      Enter passphrase for new wallet: *******************
@@ -85,7 +85,7 @@ and a permanent local record will exist of all the contracts you work.
   6. Once you have a generated or imported a wallet and transferred some Ether to it,
      set `ethAddress` to `eth-command-line` to use that account for fund transfers or method invocations as shown in this example:
      ```
-     eth ~> set ethAddress := "0xc33071ead8753b04e0ee108cc168f2b22f93525d"
+     eth on master in eth-command-line> set ethAddress := "0xc33071ead8753b04e0ee108cc168f2b22f93525d"
   
      ```
      Remember to replace the hex string above with your own Ethereum address!
