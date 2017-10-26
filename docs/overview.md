@@ -176,7 +176,7 @@ sbt_version [0.13.15]:
 
 Template applied in ./hyperdemocracy
 ```
-You'll find a `src/main/scala` directory defined, containing an `org\hyperdemocracy\voting` subdirectory
+You'll find a `src/main/scala` directory defined, containing an `org/hyperdemocracy/voting` subdirectory
 for your scala application, in addition to `src/main/solidity`.
 
 You will also find a `src/test/scala` directory defined with a parallel package directory hierarchy.
