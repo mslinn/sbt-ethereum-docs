@@ -122,11 +122,10 @@ If neither the environment variable called `ETH_INFURA_TOKEN` nor the environmen
 the default Ethereum node is used, `http://ethjsonrpc.mchange.com:8545/`.
     
 ## Custom Projects
-The `sbt-ethereum-seed` project is a handy starting point for custom projects based on `sbt-ethereum`, 
-and it also supports all of the functionality of `eth-command-line`.
+The `eth-command-line` project is a handy starting point for custom projects based on `sbt-ethereum`.
 To create a custom project:
 
-  1. Clone [sbt-ethereum-seed](https://github.com/mslinn/sbt-ethereum-seed):
+  1. Clone [eth-command-line](https://github.com/swaldman/eth-command-line):
      ```
      git clone git@github.com:swaldman/eth-command-line.git
      ```
@@ -141,9 +140,9 @@ From the top-level directory of any SBT project based on `sbt-ethereum`, start S
 ```
 $ sbt
 [info] Loading global plugins from /home/mslinn/.sbt/0.13/plugins
-[info] Loading project definition from /mnt/_/work/sbt-ethereum-seed/project
+[info] Loading project definition from /mnt/_/work/eth-command-line/project
 12:10:24.290 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
-[info] Set current project to sbt-ethereum-template (in build file:/mnt/_/work/sbt-ethereum-seed/)
+[info] Set current project to sbt-ethereum-template (in build file:/mnt/_/work/eth-command-line/)
 2017-10-24 12:10:25.833:INFO::pool-8-thread-1: Logging initialized @5415ms to org.eclipse.jetty.util.log.StdErrLog
 [info] Updating available solidity compiler set.
 > 
