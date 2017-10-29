@@ -56,7 +56,7 @@ and a permanent local record will exist of all the contracts you work.
      [info] Updating available solidity compiler set.
      eth-command-line ~> 
      ```
-     If you already have [sbt](http://www.scala-sbt.org/download.html) installed in your machine, you can type `$ sbt`
+     If you already have [sbt](http://www.scala-sbt.org/download.html) installed in your machine, you can run SBT. For most users, simply type `sbt`.
      from within the `eth-command-line` directory instead of `./eth-command-line`. (The `eth-command-line` script is just
      an `sbt` launcher.)
   4. When you see the `eth-command-line` prompt (`eth-command-line ~> `) you can begin typing `sbt-ethereum` commands. 

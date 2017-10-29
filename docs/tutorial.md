@@ -58,9 +58,10 @@ Enter passphrase for new wallet: *******************
 Please retype to confirm: *******************
 [success] Total time: 17 s, completed Oct 27, 2017 6:53:43 AM
 ```
-Note that we now have an Ethereum address, `0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5`. (The address is not
+Note that we now have an Ethereum address. Mine is `0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5`, but if you
+are following along, your will be different. The address is not
 yet funded or worth anything, but if we mean to use it to manage value, it's a good idea to **back up your wallet
-files**. _**TODO:** a link to a page about the sbt-ethereum repository and the location of wallet files._)
+files**. _**TODO:** a link to a page about the sbt-ethereum repository and the location of wallet files._
 
 Once we have an address in `sbt-ethereum`'s keystore, we can work with it from any `sbt-ethereum` project.
 `sbt-ethereum` retains a persistent repository of information about addresses and smart contracts that is always
@@ -146,7 +147,7 @@ eth-command-line ~> ethBalance 0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5
 Whenever you interact with the Ethereum blockchain, there needs to be some Ethereum address in the role of a sender. You interact
 with the blockchain by sending messages to it. The blockchain expects an address from which the message comes.
 
-`sbt_ethereum` allows you to set up a sender in three different ways, by setting up an alias called `defaultSender`, by defining an
+`sbt-ethereum` allows you to set up a sender in three different ways, by setting up an alias called `defaultSender`, by defining an
 ordinary sbt setting called `ethSender`, or by using the task `ethSenderOverrideSet` to establish a short-lived, temporary sender.
 It's most convenient to define the address you use most often as `defaultSender`, and then define temporary overrides as needed.
 (You'll only want to define `ethSender` when you are working on a development project with its own well-defined owner.)
@@ -198,7 +199,7 @@ This contract has been deployed already at the address `0xcf547d5909b3c39e98bb54
 
 To interact with most Ethereum smart contracts, you need a JSON descriptor of the contract called an ABI.
 
-When you develop and deploy a smart contract yourself, `sbt_ethereum` will automatically remember and incorporate the ABI into the
+When you develop and deploy a smart contract yourself, `sbt-ethereum` will automatically remember and incorporate the ABI into the
 its internal database. However, when you wish to interact with a smart contract deployed by someone else, you have to get hold of
 the ABI somehow.
 
@@ -207,7 +208,7 @@ But for now, things are more ad-hoc. Often, you will find ABIs in the documentat
 widely used may publish their ABI on websites like [Etherscan](https://etherscan.io). Our Fortune contract has published its ABI there. Put
 its address in the seach field at Etherscan. Then look under the "Contract Source" tab to find the ABI.
 
-To tell `sbt_ethereum` about an ABI you have discovered externally, use the `ethAbiMemorize` command. The command itself takes no arguments.
+To tell `sbt-ethereum` about an ABI you have discovered externally, use the `ethAbiMemorize` command. The command itself takes no arguments.
 It will prompt you for the contract address and the ABI, both of which you should copy and paste into your console.
 ```
 eth-command-line ~> ethAbiMemorize
@@ -216,7 +217,7 @@ Contract ABI: [{"constant":false,"inputs":[{"name":"fortune","type":"string"}],"
 [info] ABI is now known for the contract at address cf547d5909b3c39e98bb54107f3320f60df01609
 [success] Total time: 43 s, completed Oct 29, 2017 3:34:51 AM
 ```
-Once an ABI has been memorized, it is available forever. `sbt_ethereum` will always know how to interact with this contract (unless you explicitly
+Once an ABI has been memorized, it is available forever. `sbt-ethereum` will always know how to interact with this contract (unless you explicitly
 use `ethAbiForget` to forget it).
 
 #### Invoking a read-only method
