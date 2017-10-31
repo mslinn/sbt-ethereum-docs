@@ -1,6 +1,6 @@
 # Tutorial
 
-#### Overview
+## Overview
 
 Learn how to interact with smart contracts deployed on the Ethereum blockchain in a few minutes.
 We'll take you from no experience whatsoever to reading and updating contract state in no time at all.
@@ -8,7 +8,7 @@ The only prerequisite will be to have Java 8 VM installed. Plus, while reading c
 transactions that update the blockchain cost bank (well, a few cents usually). We'll walk you through
 setting up an Ethereum account and wallet, but you'll have to get the account funded somehow.
 
-#### Getting `eth-command-line`
+## Getting `eth-command-line`
 
 `eth-command-line` is the simplest way to play with `sbt-ethereum`. It's just a sample project you
 can clone, not usually for development purposes, but to interact with Ethereum's blockchain and tools.
@@ -38,7 +38,7 @@ From now on, you can enter the `eth-command-line` directory and run the `eth-com
 any time you'd like. Starting up `eth-command-line` may still spew some warnings, but it should all happen
 much mor quickly.
 
-#### Creating accounts and wallets
+## Creating accounts and wallets
 
 An Ethereum account can be represented as just a number made up of 40 hexadecimal characters. The account
 is controlled by whomever has access to a *private key* associated with the account. In its purest form,
@@ -75,7 +75,7 @@ eth-command-line ~> ethKeystoreList
 +--------------------------------------------+
 [success] Total time: 1 s, completed Oct 27, 2017 7:03:22 AM
 ```
-##### A note about long, ugly command names
+### A note about long, ugly command names
 
 `sbt-ethereum` uses extremely verbose command names, whose meaning is hopefully reasonably clear, but that
 no one should want to type. Don't type them! `sbt-ethereum` is designed to work by <tab> completetion. To
@@ -87,7 +87,7 @@ the previous paragraph, but it will also suggest command-line arguments once the
 When interacting with smart contracts, tabbing will reveal the available smart-contract methods, and then
 their names and types.**
 
-#### Connecting to an Ethereum node
+## Connecting to an Ethereum node
 
 Suppose you wanted to check the balance of your new account. You could use the command `ethBalance`, followed by
 the address whose balance you wish to check. But you may see an error, like this:
@@ -142,7 +142,7 @@ eth-command-line ~> ethBalance 0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5
 [success] Total time: 0 s, completed Oct 27, 2017 7:42:00 AM
 ```
 
-### Defining a default sender
+## Defining a default sender
 
 Whenever you interact with the Ethereum blockchain, there needs to be some Ethereum address in the role of a sender. You interact
 with the blockchain by sending messages to it. The blockchain expects an address from which the message comes.
@@ -160,7 +160,7 @@ eth-command-line ~> ethAliasSet defaultSender 0xd1a30c1e0cb4ccb679e3b3cb069d606c
 ```
 You are now ready to work with the Ethereum blockchain!
 
-### Reading blockchain state via a smart contract
+## Reading blockchain state via a smart contract
 
 It's clear that we have no money. But we can still interact with smart contracts, if we content ourselves with "constant", "pure", or "view"
 functions that may read data but do not alter the state of the blockchain.
@@ -195,7 +195,7 @@ the `addFortune` method. Once fortunes have been added, users can then draw a ra
 Contracts have Ethereum addresses, just like humans do (and contract addresses can hold money -- "Ether" -- which the contract manages).
 This contract has been deployed already at the address `0xcf547d5909b3c39e98bb54107f3320f60df01609`.
 
-#### Memorizing a contract ABI
+## Memorizing a contract ABI
 
 To interact with most Ethereum smart contracts, you need a JSON descriptor of the contract called an ABI.
 
@@ -220,7 +220,7 @@ Contract ABI: [{"constant":false,"inputs":[{"name":"fortune","type":"string"}],"
 Once an ABI has been memorized, it is available forever. `sbt-ethereum` will always know how to interact with this contract (unless you explicitly
 use `ethAbiForget` to forget it).
 
-#### Invoking a read-only method
+## Invoking a read-only method
 
 Ethereum smart-contracts can mark methods as read-only. (Historically, that was via the keyword `constant`, but more recent
 versions of the language support `view` and `pure` modifiers.) In all cases, read-only methods promise not to change the
@@ -240,11 +240,12 @@ eth-command-line ~> ethInvokeConstant 0xcf547d5909b3c39e98bb54107f3320f60df01609
 [success] Total time: 0 s, completed Oct 29, 2017 6:04:32 AM
 ```
 
-#### Setting aliases for common addresses
+## Setting aliases for common addresses
 
 We've seen this before, but it's annoying to have to refer to commonly used addresses as strings like
 `0xcf547d5909b3c39e98bb54107f3320f60df01609`. Let's set an alias for this, so we can simply refer to it
 as 'fortune':
+
 ```
 eth-command-line ~> ethAliasSet fortune 0xcf547d5909b3c39e98bb54107f3320f60df01609 
 [info] Alias 'fortune' now points to address 'cf547d5909b3c39e98bb54107f3320f60df01609' (for blockchain 'mainnet').
@@ -257,6 +258,4 @@ eth-command-line ~> ethInvokeConstant fortune drawFortune
 [info] The function 'drawFortune' yields 1 result.
 [info]  + Result 1 of type 'string', named 'fortune', is "That\'s going to hurt a little bit."
 [success] Total time: 0 s, completed Oct 29, 2017 8:26:29 AM
-
 ```
-
