@@ -21,3 +21,4 @@ If you are lazy or do not feel there is a need for a helpful commit comment,
 just run the SBT task and it will commit with a single dash in place of a comment:
 
     $ sbt commitAndPublishGitbook
+
