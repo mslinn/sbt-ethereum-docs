@@ -1,8 +1,8 @@
 # Sample Session
 
 ```
-> show ethJsonRpcUrl
-show ethJsonRpcUrl
+> show ethcfgJsonRpcUrl
+show ethcfgJsonRpcUrl
 [info] https://mainnet.infura.io/xxxx
 > ethKeystoreList
 ethKeystoreList
@@ -15,7 +15,7 @@ ethKeystoreList
 > xethGasPriceOverrideSet 5 gwei
 [info] Gas price override set to 5000000000.
 [success] Total time: 0 s, completed Oct 23, 2017 4:22:20 PM
-> ethDeployOnly SampleContract
+> ethContractSpawnOnly SampleContract
 [info] Unlocking address '0x766f158c69cdb28e2f8815e16a82ecee48865d38' (on blockchain 'mainnet', aliases 'defaultSender')
 Enter passphrase or hex private key for address '0x766f158c69cdb28e2f8815e16a82ecee48865d38':
 [info] V3 wallet found for '0x766f158c69cdb28e2f8815e16a82ecee48865d38' (aliases 'defaultSender')
@@ -36,14 +36,14 @@ Enter passphrase or hex private key for address '0x766f158c69cdb28e2f8815e16a82e
 [info]        Contract Address:    0x019e39e4c8c46034b1c0da2d26f99cc6a1ae941b
 [info]        Logs:                None
 [info] Contract 'SampleContract' has been assigned address '0x019e39e4c8c46034b1c0da2d26f99cc6a1ae941b'.
-> ethCompilationsList
+> ethContractCompilationsList
 +------------+--------------------------------------------+----------------------+--------------------------------------------------------------------+------------------------------+
 | Blockchain | Contract Address                           | Name                 | Code Hash                                                          | Deployment Timestamp         |
 +------------+--------------------------------------------+----------------------+--------------------------------------------------------------------+------------------------------+
 | mainnet    | 0x019e39e4c8c46034b1c0da2d26f99cc6a1ae941b | SampleContract       | 0xebd2941e2f46d0daf2dc625e6eef82a9354ef42bab83170088582010c571215c | 2017-10-23T16:24:13.017-0700 |
 +------------+--------------------------------------------+----------------------+--------------------------------------------------------------------+------------------------------+
 [success] Total time: 0 s, completed Oct 23, 2017 4:24:39 PM
-> ethCompilationsInspect 0x019e39e4c8c46034b1c0da2d26f99cc6a1ae941b
+> ethContractCompilationsInspect 0x019e39e4c8c46034b1c0da2d26f99cc6a1ae941b
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
                        CONTRACT INFO DUMP
@@ -132,7 +132,7 @@ Go to https://etherscan.io/address/0x019e39e4c8c46034b1c0da2d26f99cc6a1ae941b
 The query cost a tiny bit.
 
 ```
-> ethBalance
+> ethAddressBalance
 [info] 0.009556395 ether (as of the latest incorporated block, address 0x766f158c69cdb28e2f8815e16a82ecee48865d38)
 [success] Total time: 0 s, completed Oct 23, 2017 4:26:26 PM
 > ethKeystoreList
@@ -152,7 +152,7 @@ The query cost a tiny bit.
 [info] Raw result of call to function 'asdf': 0x
 [info] The function asdf yields no result.
 [success] Total time: 0 s, completed Oct 23, 2017 4:29:14 PM
-> ethInvokeTransaction 0x019e39e4c8c46034b1c0da2d26f99cc6a1ae941b asdf 1234
+> ethTransactionInvoke 0x019e39e4c8c46034b1c0da2d26f99cc6a1ae941b asdf 1234
 [info] Unlocking address '0x766f158c69cdb28e2f8815e16a82ecee48865d38' (on blockchain 'mainnet', aliases 'defaultSender')
 Enter passphrase or hex private key for address '0x766f158c69cdb28e2f8815e16a82ecee48865d38':
 [info] V3 wallet found for '0x766f158c69cdb28e2f8815e16a82ecee48865d38' (aliases 'defaultSender')

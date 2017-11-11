@@ -2,119 +2,119 @@
 
 ## `eth` Commands
 
-### `ethAbiForget`
+### `ethContractAbiForget`
 Sample usage:
 ```scala
 scala> 1 + 1
 res0: Int = 2
 ```
 
-### `ethAbiList`
+### `ethContractAbiList`
 Sample usage:
 ```scala
 scala> 1 + 1
 res1: Int = 2
 ```
 
-### `ethAbiMemorize`
+### `ethContractAbiMemorize`
 Sample usage:
 ```scala
 scala> 1 + 1
 res2: Int = 2
 ```
 
-### `ethAliasDrop`
+### `ethAddressAliasDrop`
 Sample usage:
 ```scala
 scala> 1 + 1
 res3: Int = 2
 ```
 
-### `ethAliasList`
+### `ethAddressAliasList`
 Sample usage:
 ```scala
 scala> 1 + 1
 res4: Int = 2
 ```
 
-### `ethAliasSet`
+### `ethAddressAliasSet`
 Sample usage:
 ```scala
 scala> 1 + 1
 res5: Int = 2
 ```
 
-### `ethBalance`
+### `ethAddressBalance`
 Sample usage:
 ```scala
 scala> 1 + 1
 res6: Int = 2
 ```
 
-### `ethBalanceInWei` 
+### `ethAddressBalanceInWei` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res7: Int = 2
 ```
 
-### `ethBlockchainId` 
+### `ethcfgBlockchainId` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res8: Int = 2
 ```
 
-### `ethCompilationsCull` 
+### `ethContractCompilationsCull` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res9: Int = 2
 ```
 
-### `ethCompilationsInspect` 
+### `ethContractCompilationsInspect` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res10: Int = 2
 ```
 
-### `ethCompilationsList` 
+### `ethContractCompilationsList` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res11: Int = 2
 ```
 
-### `ethDeployAuto`
+### `ethContractSpawnAuto`
 Sample usage:
 ```scala
 scala> 1 + 1
 res12: Int = 2
 ```
 
-### `ethDeployAutoContracts` 
+### `ethcfgAutoSpawnContracts` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res13: Int = 2
 ```
 
-### `ethDeployOnly`
+### `ethContractSpawnOnly`
 Sample usage:
 ```scala
 scala> 1 + 1
 res14: Int = 2
 ```
 
-### `ethEntropySource`
+### `ethcfgEntropySource`
 Sample usage:
 ```scala
 scala> 1 + 1
 res15: Int = 2
 ```
 
-### `ethGasMarkup`
+### `ethcfgGasLimitMarkup`
 Sample usage:
 ```scala
 scala> 1 + 1
@@ -128,7 +128,7 @@ scala> 1 + 1
 res17: Int = 2
 ```
 
-### `ethIncludeLocations` 
+### `ethcfgIncludeLocations` 
 Sample usage:
 ```scala
 scala> 1 + 1
@@ -142,35 +142,35 @@ scala> 1 + 1
 res19: Int = 2
 ```
 
-### `ethInvokeTransaction` 
+### `ethTransactionInvoke` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res20: Int = 2
 ```
 
-### `ethJsonRpcUrl`
+### `ethcfgJsonRpcUrl`
 Sample usage:
 ```scala
 scala> 1 + 1
 res21: Int = 2
 ```
 
-### `ethKeystoreAutoRelockSeconds` 
+### `ethcfgKeystoreAutoRelockSeconds` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res22: Int = 2
 ```
 
-### `ethKeystoreCreateWalletV3` 
+### `ethKeystoreWalletV3Create` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res23: Int = 2
 ```
 
-### `ethKeystoreInspectWalletV3` 
+### `ethKeystoreWalletV3Inspect` 
 Sample usage:
 ```scala
 scala> 1 + 1
@@ -184,91 +184,91 @@ scala> 1 + 1
 res25: Int = 2
 ```
 
-### `ethKeystoreLocationsV3` 
+### `etcfghKeystoreLocatiosV3` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res26: Int = 2
 ```
 
-### `ethKeystoreMemorizeWalletV3` 
+### `ethKeystoreWalletV3Memorize` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res27: Int = 2
 ```
 
-### `ethKeystoreRevealPrivateKey` 
+### `ethKeystorePrivateKeyReveal` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res28: Int = 2
 ```
 
-### `ethKeystoreValidateWalletV3` 
+### `ethKeystoreWalletV3Validate` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res29: Int = 2
 ```
 
-### `ethNetcompileUrl`
+### `ethcfgNetcompileUrl`
 Sample usage:
 ```scala
 scala> 1 + 1
 res30: Int = 2
 ```
 
-### `ethPackageScalaStubs`
+### `ethcfgScalaStubsPackage`
 Sample usage:
 ```scala
 scala> 1 + 1
 res31: Int = 2
 ```
 
-### `ethSelfPing`
+### `ethAddressPing`
 Sample usage:
 ```scala
 scala> 1 + 1
 res32: Int = 2
 ```
 
-### `ethSendEther`
+### `ethTransactionSend`
 Sample usage:
 ```scala
 scala> 1 + 1
 res33: Int = 2
 ```
 
-### `ethSender`
+### `ethcfgSender`
 Sample usage:
 ```scala
 scala> 1 + 1
 res34: Int = 2
 ```
 
-### `ethSenderOverrideDrop` 
+### `ethcfgSenderOverrideDrop` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res35: Int = 2
 ```
 
-### `ethSenderOverrideSet`
+### `ethcfgSenderOverrideSet`
 Sample usage:
 ```scala
 scala> 1 + 1
 res36: Int = 2
 ```
 
-### `ethSenderOverrideShow`
+### `ethcfgSenderOverrideShow`
 Sample usage:
 ```scala
 scala> 1 + 1
 res37: Int = 2
 ```
 
-### `ethSolidityChooseCompiler` 
+### `ethSolidityCompilerSelect` 
 Sample usage:
 ```scala
 scala> 1 + 1
@@ -289,14 +289,14 @@ scala> 1 + 1
 res40: Int = 2
 ```
 
-### `ethSolidityInstallCompiler` 
+### `ethSolidityCompilerInstall` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res41: Int = 2
 ```
 
-### `ethSolidityShowCompiler` 
+### `ethSolidityCompilerPrint` 
 Sample usage:
 ```scala
 scala> 1 + 1
@@ -317,21 +317,21 @@ scala> 1 + 1
 res44: Int = 2
 ```
 
-### `ethTestrpcLocalRestart` 
+### `ethDebugTestrpcLocalRestart` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res45: Int = 2
 ```
 
-### `ethTestrpcLocalStart` 
+### `ethDebugTestrpcLocalStart` 
 Sample usage:
 ```scala
 scala> 1 + 1
 res46: Int = 2
 ```
 
-### `ethTestrpcLocalStop`
+### `ethDebugTestrpcLocalStop`
 Sample usage:
 ```scala
 scala> 1 + 1
@@ -348,7 +348,7 @@ scala> 1 + 1
 res48: Int = 2
 ```
 
-### `xethEphemeralBlockchains`
+### `xethcfgEphemeralBlockchains`
 Sample usage:
 ```scala
 scala> 1 + 1
@@ -460,14 +460,14 @@ scala> 1 + 1
 res64: Int = 2
 ```
 
-### `xethKeystoreCreateWalletV3Pbkdf2`
+### `xethKeystoreWalletV3CreatePbkdf2`
 Sample usage:
 ```scala
 scala> 1 + 1
 res65: Int = 2
 ```
 
-### `xethKeystoreCreateWalletV3Scrypt`
+### `xethKeystoreWalletV3CreateScrypt`
 Sample usage:
 ```scala
 scala> 1 + 1
@@ -509,7 +509,7 @@ scala> 1 + 1
 res71: Int = 2
 ```
 
-### `xethNamedAbiSource`
+### `xethcfgNamedAbiSource`
 Sample usage:
 ```scala
 scala> 1 + 1
@@ -537,7 +537,7 @@ scala> 1 + 1
 res75: Int = 2
 ```
 
-### `xethTestingResourcesObjectName`
+### `xethcfgTestingResourcesObjectName`
 Sample usage:
 ```scala
 scala> 1 + 1
@@ -579,42 +579,42 @@ scala> 1 + 1
 res81: Int = 2
 ```
 
-### `xethWalletV3Pbkdf2C`
+### `xethcfgWalletV3Pbkdf2C`
 Sample usage:
 ```scala
 scala> 1 + 1
 res82: Int = 2
 ```
 
-### `xethWalletV3Pbkdf2DkLen`
+### `xethcfgWalletV3Pbkdf2DkLen`
 Sample usage:
 ```scala
 scala> 1 + 1
 res83: Int = 2
 ```
 
-### `xethWalletV3ScryptDkLen`
+### `xethcfgWalletV3ScryptDkLen`
 Sample usage:
 ```scala
 scala> 1 + 1
 res84: Int = 2
 ```
 
-### `xethWalletV3ScryptN`
+### `xethcfgWalletV3ScryptN`
 Sample usage:
 ```scala
 scala> 1 + 1
 res85: Int = 2
 ```
 
-### `xethWalletV3ScryptP`
+### `xethcfgWalletV3ScryptP`
 Sample usage:
 ```scala
 scala> 1 + 1
 res86: Int = 2
 ```
 
-### `xethWalletV3ScryptR`
+### `xethcfgWalletV3ScryptR`
 Sample usage:
 ```scala
 scala> 1 + 1

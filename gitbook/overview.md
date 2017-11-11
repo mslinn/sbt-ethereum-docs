@@ -63,23 +63,23 @@ and a permanent local record will exist of all the contracts you work.
      (These are actually as sbt *tasks*.)
      To see a list of all `eth-command-line`'s tasks and settings, type `eth<tab>` and `xeth<tab>`.
   5. Before you can run tasks that require the payment of Ether, such as sending Ether 
-     ([ethSendEther](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethsendether)) or
+     ([ethTransactionSend](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethsendether)) or
      invoking state-changing smart-contract functions 
-     ([ethInvokeTransaction](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethinvoketransaction)), 
+     ([ethTransactionInvoke](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethinvoketransaction)), 
      you will need to first define the ethereum address from which the operation will originate. 
      You can create a new address using the
-     [ethKeystoreCreateWalletV3](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethkeystorecreatewalletv3) 
+     [ethKeystoreWalletV3Create](https://mslinn.gitbooks.io/sbt-ethereum/content/gitbook/tasks.html#ethkeystorecreatewalletv3) 
      task.
      ```
-     eth on master in eth-command-line> ethKeystoreCreateWalletV3
+     eth on master in eth-command-line> ethKeystoreWalletV3Create
      [info] Generated keypair for address '0xc33071ead8753b04e0ee108cc168f2b22f93525d'
      [info] Generating V3 wallet, alogorithm=scrypt, n=262144, r=8, p=1, dklen=32
      Enter passphrase for new wallet: *******************
      Please retype to confirm: *******************
      [success] Total time: 31 s, completed Dec 30, 2016 7:53:11 AM
      ```
-     `ethKeystoreCreateWalletV3` is an annoyingly long command to type. Don't type it. Type `ethK<tab>`, which will
-     expand to `ethKeystore` then `C<tab>`, which will expans to `ethKeystoreCreateWalletV3`.
+     `ethKeystoreWalletV3Create` is an annoyingly long command to type. Don't type it. Type `ethK<tab>`, which will
+     expand to `ethKeystore` then `C<tab>`, which will expans to `ethKeystoreWalletV3Create`.
 
      You can also import any existing `geth` wallets into the `sbt-ethereum` repository directory.
      Just copy the wallet files for the accounts you wish to import from the `geth` keystore into the 
@@ -93,7 +93,7 @@ and a permanent local record will exist of all the contracts you work.
   6. Once you have a generated or imported a wallet and transferred some Ether to it,
      you can make it the default sender for your interactions with the blockchain by setting a special alias, `defaultSender`:
      ```
-     eth-command-line ~> ethAliasSet defaultSender 0xe92db74ce7c392634a1d9af344aeeb4a5f1e0a78
+     eth-command-line ~> ethAddressAliasSet defaultSender 0xe92db74ce7c392634a1d9af344aeeb4a5f1e0a78
      [info] Alias 'defaultSender' now points to address 'e92db74ce7c392634a1d9af344aeeb4a5f1e0a78' (for blockchain 'mainnet').
      [info] Refreshing alias cache.
      [success] Total time: 0 s, completed Oct 25, 2017 11:41:40 PM
@@ -124,9 +124,9 @@ you should store your node's URL in `ETH_DEFAULT_NODE`, like this:
 ```
 export ETH_DEFAULT_NODE="http://mynode.domain.com:8545/"
 ```
-If you have defined your own custom sbt-ethereum project, you can also define the setting `ethJsonRpcUrl` in your `build.sbt` file.
+If you have defined your own custom sbt-ethereum project, you can also define the setting `ethcfgJsonRpcUrl` in your `build.sbt` file.
 ```
-ethJsonRpcUrl := "http://mynode.domain.com:8545/"
+ethcfgJsonRpcUrl := "http://mynode.domain.com:8545/"
 ```
 
 ### Using the Default Ethereum Node
@@ -204,26 +204,26 @@ Try typing `eth<tab>`, and you will see all the SBT tasks and settings that `sbt
 
 ```
 > eth
-ethAbiForget                   ethAbiList                     ethAbiMemorize                 ethAliasDrop                   ethAliasList                   ethAliasSet                    ethBalance                     ethBalanceInWei                
-ethBlockchainId                ethCompilationsCull            ethCompilationsInspect         ethCompilationsList            ethDeployAuto                  ethDeployAutoContracts         ethDeployOnly                  ethEntropySource               
-ethGasMarkup                   ethGasPriceMarkup              ethIncludeLocations            ethInvokeConstant              ethInvokeTransaction           ethJsonRpcUrl                  ethKeystoreAutoRelockSeconds   ethKeystoreCreateWalletV3      
-ethKeystoreInspectWalletV3     ethKeystoreList                ethKeystoreLocationsV3         ethKeystoreMemorizeWalletV3    ethKeystoreRevealPrivateKey    ethKeystoreValidateWalletV3    ethNetcompileUrl               ethPackageScalaStubs           
-ethSelfPing                    ethSendEther                   ethSender                      ethSenderOverrideDrop          ethSenderOverrideSet           ethSenderOverrideShow          ethSolidityChooseCompiler      ethSolidityCompile             
-ethSolidityDestination         ethSolidityInstallCompiler     ethSolidityShowCompiler        ethSoliditySource              ethTargetDir                   ethTestrpcLocalRestart         ethTestrpcLocalStart           ethTestrpcLocalStop            
+ethContractAbiForget                   ethContractAbiList                     ethContractAbiMemorize                 ethAddressAliasDrop                   ethAddressAliasList                   ethAddressAliasSet                    ethAddressBalance                     ethAddressBalanceInWei                
+ethcfgBlockchainId                ethContractCompilationsCull            ethContractCompilationsInspect         ethContractCompilationsList            ethContractSpawnAuto                  ethcfgAutoSpawnContracts         ethContractSpawnOnly                  ethcfgEntropySource               
+ethcfgGasLimitMarkup                   ethGasPriceMarkup              ethcfgIncludeLocations            ethInvokeConstant              ethTransactionInvoke           ethcfgJsonRpcUrl                  ethcfgKeystoreAutoRelockSeconds   ethKeystoreWalletV3Create      
+ethKeystoreWalletV3Inspect     ethKeystoreList                etcfghKeystoreLocatiosV3         ethKeystoreWalletV3Memorize    ethKeystorePrivateKeyReveal    ethKeystoreWalletV3Validate    ethcfgNetcompileUrl               ethcfgScalaStubsPackage           
+ethAddressPing                    ethTransactionSend                   ethcfgSender                      ethcfgSenderOverrideDrop          ethcfgSenderOverrideSet           ethcfgSenderOverrideShow          ethSolidityCompilerSelect      ethSolidityCompile             
+ethSolidityDestination         ethSolidityCompilerInstall     ethSolidityCompilerPrint        ethSoliditySource              ethTargetDir                   ethDebugTestrpcLocalRestart         ethDebugTestrpcLocalStart           ethDebugTestrpcLocalStop            
 > eth
 ```
 
 Similarly, typing `xeth<tab>` shows all the SBT tasks and settings that `sbt-ethereum` defines with that prefix:
 ```
 > xeth
-xethDefaultGasPrice                        xethEphemeralBlockchains                   xethFindCacheAliasesIfAvailable            xethFindCacheOmitDupsCurrentCompilations   xethFindCacheSessionSolidityCompilerKeys   
+xethDefaultGasPrice                        xethcfgEphemeralBlockchains                   xethFindCacheAliasesIfAvailable            xethFindCacheOmitDupsCurrentCompilations   xethFindCacheSessionSolidityCompilerKeys   
 xethFindCurrentSender                      xethFindCurrentSolidityCompiler            xethGasOverrideDrop                        xethGasOverrideSet                         xethGasOverrideShow                        
 xethGasPrice                               xethGasPriceOverrideDrop                   xethGasPriceOverrideSet                    xethGasPriceOverrideShow                   xethGenKeyPair                             
-xethGenScalaStubsAndTestingResources       xethInvokeData                             xethKeystoreCreateWalletV3Pbkdf2           xethKeystoreCreateWalletV3Scrypt           xethLoadAbiFor                             
-xethLoadCompilationsKeepDups               xethLoadCompilationsOmitDups               xethLoadWalletV3                           xethLoadWalletV3For                        xethNamedAbiSource                         
-xethNamedAbis                              xethNextNonce                              xethQueryRepositoryDatabase                xethTestingResourcesObjectName             xethTriggerDirtyAliasCache                 
-xethTriggerDirtySolidityCompilerList       xethUpdateContractDatabase                 xethUpdateRepositoryDatabase               xethUpdateSessionSolidityCompilers         xethWalletV3Pbkdf2C                        
-xethWalletV3Pbkdf2DkLen                    xethWalletV3ScryptDkLen                    xethWalletV3ScryptN                        xethWalletV3ScryptP                        xethWalletV3ScryptR                        
+xethGenScalaStubsAndTestingResources       xethInvokeData                             xethKeystoreWalletV3CreatePbkdf2           xethKeystoreWalletV3CreateScrypt           xethLoadAbiFor                             
+xethLoadCompilationsKeepDups               xethLoadCompilationsOmitDups               xethLoadWalletV3                           xethLoadWalletV3For                        xethcfgNamedAbiSource                         
+xethNamedAbis                              xethNextNonce                              xethQueryRepositoryDatabase                xethcfgTestingResourcesObjectName             xethTriggerDirtyAliasCache                 
+xethTriggerDirtySolidityCompilerList       xethUpdateContractDatabase                 xethUpdateRepositoryDatabase               xethUpdateSessionSolidityCompilers         xethcfgWalletV3Pbkdf2C                        
+xethcfgWalletV3Pbkdf2DkLen                    xethcfgWalletV3ScryptDkLen                    xethcfgWalletV3ScryptN                        xethcfgWalletV3ScryptP                        xethcfgWalletV3ScryptR                        
 > xeth
 ```
 

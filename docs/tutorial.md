@@ -51,7 +51,7 @@ the private key encrypted with a passphrase that you choose and memorize.
 Let's create a wallet!
 
 ```
-eth-command-line ~> ethKeystoreCreateWalletV3
+eth-command-line ~> ethKeystoreWalletV3Create
 [info] Generated keypair for address '0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5'
 [info] Generating V3 wallet, alogorithm=scrypt, n=262144, r=8, p=1, dklen=32
 Enter passphrase for new wallet: *******************
@@ -89,13 +89,13 @@ their names and types.**
 
 ## Connecting to an Ethereum node
 
-Suppose you wanted to check the balance of your new account. You could use the command `ethBalance`, followed by
+Suppose you wanted to check the balance of your new account. You could use the command `ethAddressBalance`, followed by
 the address whose balance you wish to check. But you may see an error, like this:
 ```
-eth-command-line ~> ethBalance 0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5
+eth-command-line ~> ethAddressBalance 0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5
 [error] Failed to connect to JSON-RPC client at 'http://ethjsonrpc.mchange.com:8545': java.net.ConnectException: Connection refused
-[trace] Stack trace suppressed: run last compile:ethBalance for the full output.
-[error] (compile:ethBalance) java.net.ConnectException: Connection refused
+[trace] Stack trace suppressed: run last compile:ethAddressBalance for the full output.
+[error] (compile:ethAddressBalance) java.net.ConnectException: Connection refused
 [error] Total time: 1 s, completed Oct 27, 2017 7:09:53 AM
 ```
 In order to check an account balance, `sbt-ethereum` has to leave its private space and go out into the world, onto the
@@ -137,7 +137,7 @@ eth-command-line ~>
 ```
 You should now be able to check your new account's balance! Be careful to use the account number you generated in place of the one shown below.
 ```
-eth-command-line ~> ethBalance 0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5
+eth-command-line ~> ethAddressBalance 0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5
 [info] 0 ether (as of the latest incorporated block, address 0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5)
 [success] Total time: 0 s, completed Oct 27, 2017 7:42:00 AM
 ```
@@ -148,12 +148,12 @@ Whenever you interact with the Ethereum blockchain, there needs to be some Ether
 with the blockchain by sending messages to it. The blockchain expects an address from which the message comes.
 
 `sbt-ethereum` allows you to set up a sender in three different ways, by setting up an alias called `defaultSender`, by defining an
-ordinary sbt setting called `ethSender`, or by using the task `ethSenderOverrideSet` to establish a short-lived, temporary sender.
+ordinary sbt setting called `ethcfgSender`, or by using the task `ethcfgSenderOverrideSet` to establish a short-lived, temporary sender.
 It's most convenient to define the address you use most often as `defaultSender`, and then define temporary overrides as needed.
-(You'll only want to define `ethSender` when you are working on a development project with its own well-defined owner.)
+(You'll only want to define `ethcfgSender` when you are working on a development project with its own well-defined owner.)
 Let's go ahead and define our new address as `defaultSender`.
 ```
-eth-command-line ~> ethAliasSet defaultSender 0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5
+eth-command-line ~> ethAddressAliasSet defaultSender 0xd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5
 [info] Alias 'defaultSender' now points to address 'd1a30c1e0cb4ccb679e3b3cb069d606c40e3fec5' (for blockchain 'mainnet').
 [info] Refreshing alias cache.
 [success] Total time: 0 s, completed Oct 29, 2017 4:43:29 AM
@@ -208,17 +208,17 @@ But for now, things are more ad-hoc. Often, you will find ABIs in the documentat
 widely used may publish their ABI on websites like [Etherscan](https://etherscan.io). Our Fortune contract has published its ABI there. Put
 its address in the seach field at Etherscan. Then look under the "Contract Source" tab to find the ABI.
 
-To tell `sbt-ethereum` about an ABI you have discovered externally, use the `ethAbiMemorize` command. The command itself takes no arguments.
+To tell `sbt-ethereum` about an ABI you have discovered externally, use the `ethContractAbiMemorize` command. The command itself takes no arguments.
 It will prompt you for the contract address and the ABI, both of which you should copy and paste into your console.
 ```
-eth-command-line ~> ethAbiMemorize
+eth-command-line ~> ethContractAbiMemorize
 Contract address in hex: 0xcf547d5909b3c39e98bb54107f3320f60df01609
 Contract ABI: [{"constant":false,"inputs":[{"name":"fortune","type":"string"}],"name":"addFortune","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"drawFortune","outputs":[{"name":"fortune","type":"string"}],"payable":false,"type":"function"},{"inputs":[{"name":"initialFortune","type":"string"}],"payable":false,"type":"constructor"}]
 [info] ABI is now known for the contract at address cf547d5909b3c39e98bb54107f3320f60df01609
 [success] Total time: 43 s, completed Oct 29, 2017 3:34:51 AM
 ```
 Once an ABI has been memorized, it is available forever. `sbt-ethereum` will always know how to interact with this contract (unless you explicitly
-use `ethAbiForget` to forget it).
+use `ethContractAbiForget` to forget it).
 
 ## Invoking a read-only method
 
@@ -247,7 +247,7 @@ We've seen this before, but it's annoying to have to refer to commonly used addr
 as 'fortune':
 
 ```
-eth-command-line ~> ethAliasSet fortune 0xcf547d5909b3c39e98bb54107f3320f60df01609 
+eth-command-line ~> ethAddressAliasSet fortune 0xcf547d5909b3c39e98bb54107f3320f60df01609 
 [info] Alias 'fortune' now points to address 'cf547d5909b3c39e98bb54107f3320f60df01609' (for blockchain 'mainnet').
 [info] Refreshing alias cache.
 [success] Total time: 1 s, completed Oct 29, 2017 8:26:10 AM
