@@ -1,7 +1,7 @@
 # sbt-ethereum Documentation
 
 [This Gitbook](https://mslinn.gitbooks.io/sbt-ethereum/content/) is the documentation for the family of projects based on 
-[sbt-ethereum](https://github.com/swaldman/sbt-ethereum).
+[consuela](https://github.com/swaldman/consuela).
 
 ## Related Projects
   * [sbt-ethereum](https://github.com/swaldman/sbt-ethereum) SBT Plugin
